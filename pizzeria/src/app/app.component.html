@@ -1,3 +1,11 @@
-<h1>
-  {{title}}
-</h1>
+   <!--doble binding, puede modificarse -->
+
+  <p> {{nombre}} </p> <!--No puede modificarse -->
+  
+<h1>Usuario: <input type="text"  [(ngModel)]=nombre /></h1>
+<h1>Password: <input type="text"  [(ngModel)]=password /></h1>
+
+  <input type=Button (click)="mostrarNombre()" value="Login" /> 
+   <input type=Button (click)="mostrarNombre()" value="Logout" /> 
+   
+  <br>

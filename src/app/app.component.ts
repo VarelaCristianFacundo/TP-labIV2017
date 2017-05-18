@@ -7,14 +7,4 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'app works!';
-  nombre = '';
-  password ='';
-//mostrar nombre por consola con funcion
- mostrarNombre(){ 
-    console.info(this.nombre);
-  }
-  
-
-  
-   
 }
