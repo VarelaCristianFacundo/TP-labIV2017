@@ -11,10 +11,43 @@ export class AppComponent {
   password ='';
 //mostrar nombre por consola con funcion
  mostrarNombre(){ 
-    console.info(this.nombre);
+    
   }
   
+  login(){
+    console.info ("login");
+  }
+  
+  logout(){
+    console.info ("logout");
+  }
 
+  administrador(){
+    this.nombre = "admin";
+    this.password= "1234";
+  }
+
+  encargado(){
+    
+    this.nombre = "encargado";
+    this.password= "1234";
+  }
+  
+  empleado(){
+
+    this.nombre = "empleado";
+    this.password= "1234";
+    
+  }
+
+  cliente(){
+
+    this.nombre = "cliente";
+    this.password= "1234";
+    
+  }
+  
   
    
 }
+
