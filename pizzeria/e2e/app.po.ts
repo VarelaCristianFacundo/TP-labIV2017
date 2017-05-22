@@ -1,6 +1,6 @@
 import { browser, element, by } from 'protractor';
 
-export class PizzeriaPage {
+export class AuthPage {
   navigateTo() {
     return browser.get('/');
   }

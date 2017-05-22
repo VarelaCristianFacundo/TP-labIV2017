@@ -1,10 +1,10 @@
-import { PizzeriaPage } from './app.po';
+import { AuthPage } from './app.po';
 
-describe('pizzeria App', () => {
-  let page: PizzeriaPage;
+describe('auth App', () => {
+  let page: AuthPage;
 
   beforeEach(() => {
-    page = new PizzeriaPage();
+    page = new AuthPage();
   });
 
   it('should display message saying app works', () => {
