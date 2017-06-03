@@ -1,21 +1,43 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
-import { Http, Response } from '@angular/http';
+import { Http, Response, RequestOptions, Headers, RequestMethod } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/toPromise';
 import { AuthHttp } from 'angular2-jwt';
+// import { Http, Response, RequestOptions, Headers, RequestMethod } from '@angular/http';
 
 @Injectable()
 export class WsService {
 
-  url: string = 'http://localhost/servidor/jwt/';
+  url: string = 'http://localhost/TP-labIV2017/backend/index.php/auth';
+
 
   constructor(public http: Http, private authHttp: AuthHttp)
   {
 
   }
+
+
+//Función para pasar de formato JSON a formato x-www-form-urlencoded
+  xwwwfurlenc(srcjson){
+    if(typeof srcjson !== "object")
+      if(typeof console !== "undefined"){
+        console.log("\"srcjson\" is not a JSON object");
+        return null;
+      }
+    var u = encodeURIComponent;
+    var urljson = "";
+    var keys = Object.keys(srcjson);
+    for(var i=0; i <keys.length; i++){
+        urljson += u(keys[i]) + "=" + u(srcjson[keys[i]]);
+        if(i < (keys.length-1))urljson+="&";
+    }
+    return urljson;
+  }
+
+
 
   /**
    * Metodo HTTP nativo
@@ -24,6 +46,23 @@ export class WsService {
   get(user: Object)
   {
     return this.http.get(this.url, user)
+    .toPromise()
+    .then( this.extractData )
+    .catch( this.handleError );
+  }
+
+  /**
+   * Metodo HTTP nativo
+   * @param user 
+   */
+  post(user: Object)
+  {
+    let headers = new Headers({ 'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8' });
+    let options = new RequestOptions( {method: RequestMethod.Post, headers: headers });
+
+    var pers = this.xwwwfurlenc(user);
+
+    return this.http.post(this.url, pers, options)
     .toPromise()
     .then( this.extractData )
     .catch( this.handleError );

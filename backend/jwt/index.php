@@ -2,6 +2,11 @@
 require __DIR__ . '/vendor/autoload.php';
 use \Firebase\JWT\JWT;
 
+
+
+
+
+
 $key = "example_key";
 $token = array(
     "iss" => "http://example.org",

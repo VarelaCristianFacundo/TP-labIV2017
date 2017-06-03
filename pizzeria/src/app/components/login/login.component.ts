@@ -30,7 +30,6 @@ export class LoginComponent implements OnInit {
   // public password:AbstractControl;
   // public submitted:boolean = false;
   user: User = new User('','');
-  url: string = 'http://localhost:8080/servidor/jwt/';
 
   constructor( private router: Router, private ws: WsService) {
     this.user.email = '';
@@ -43,7 +42,7 @@ export class LoginComponent implements OnInit {
   enviar()
   {
     console.log( this.user );
-    this.ws.get( {} )
+    this.ws.post( {email: this.user.email, clave: this.user.clave} )
     .then( data => {
       console.log(data);
       if ( data.token )
