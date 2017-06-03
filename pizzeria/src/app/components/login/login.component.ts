@@ -55,5 +55,28 @@ export class LoginComponent implements OnInit {
       console.log(e);
     } );
   }
+  administrador ()
+  {
+    this.user.email = "admin@admin.com"
+    this.user.clave = "1234";
+  }
+
+  encargado()
+  {
+    this.user.email = "encargado@encargado.com"
+    this.user.clave = "1234";
+  }
+
+  empleado()
+  {
+    this.user.email = "octaviovillegas@gmail.com"
+    this.user.clave = "1234";
+  }
+
+  cliente()
+  {
+    this.user.email = "rwilliam@yahoo.com.ar"
+    this.user.clave = "1234";
+  }
 
 }

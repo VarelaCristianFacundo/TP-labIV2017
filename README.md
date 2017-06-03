@@ -24,7 +24,7 @@
 Funcionales del sistema:
  - [ ] ABM.
  - [X] login (JWT).
- - [ ] Botones de test ( Administrador, encargado,empleado y cliente).
+ - [X] Botones de test ( Administrador, encargado,empleado y cliente).
  - [ ] WEbServer(API rest).
  - [ ] Geo localización.
  - [ ] Generar documentos Excel.
