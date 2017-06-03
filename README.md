@@ -22,20 +22,20 @@
  <h1> de no presentar el TP para las fechas anteriores, debe  presentar en fecha de final</h1>
 
 Funcionales del sistema:
-1- [] ABM.
-2- [X] login (JWT).
-3- [] Botones de test ( Administrador, encargado,empleado y cliente).
-4- [] WEbServer(API rest).
-5- [] Geo localización.
-6- [] Generar documentos Excel.
-7- [] Generar Documentos pdf .
-8- [] Generar graficos estadísticos.
-9- [] Responsive / estilos aplicados de forma estética.
-10-[] Manejo de imágenes.
-11-[] Creación de al menos 5 componentes.
-12-[] POO en TS para todas las entidades(usar herencia)
-13-[] Servicios
-14-[] Filtros
+ - [] ABM.
+ - [X] login (JWT).
+ - [] Botones de test ( Administrador, encargado,empleado y cliente).
+ - [] WEbServer(API rest).
+ - [] Geo localización.
+ - [] Generar documentos Excel.
+ - [] Generar Documentos pdf .
+ - [] Generar graficos estadísticos.
+ - [] Responsive / estilos aplicados de forma estética.
+ - [] Manejo de imágenes.
+ - [] Creación de al menos 5 componentes.
+ - [] POO en TS para todas las entidades(usar herencia)
+ - [] Servicios
+ - [] Filtros
 
 Usuarios:
 
