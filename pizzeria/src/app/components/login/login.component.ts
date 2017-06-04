@@ -42,8 +42,6 @@ export class LoginComponent implements OnInit {
   ngOnInit() {
   }
 
-
-
   enviar()
   {
     console.log( this.user );
@@ -70,6 +68,12 @@ export class LoginComponent implements OnInit {
     .catch( e => {
       console.log(e);
     } );
+  }
+
+  
+  registrar()
+  {
+        this.router.navigateByUrl("/pagina2");
   }
 
   administrador ()
