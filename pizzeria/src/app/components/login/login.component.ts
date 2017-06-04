@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, AbstractControl, FormBuilder, Validators} from '@angular/forms';
 import { Router } from '@angular/router';
 import { WsService } from '../../services/ws/ws.service';
+import { AutService } from '../../services/auth/aut.service';
+
 // import { Http, Response } from '@angular/http';
 // import { Observable } from 'rxjs/Observable';
 // import 'rxjs/add/operator/catch';
@@ -31,7 +33,7 @@ export class LoginComponent implements OnInit {
   // public submitted:boolean = false;
   user: User = new User('','');
 
-  constructor( private router: Router, private ws: WsService) {
+  constructor( private router: Router, private ws: WsService, private auth: AutService) {
     this.user.email = '';
     // console.log(this.user);
 
@@ -39,6 +41,9 @@ export class LoginComponent implements OnInit {
 
   ngOnInit() {
   }
+
+
+
   enviar()
   {
     console.log( this.user );
@@ -48,13 +53,25 @@ export class LoginComponent implements OnInit {
       if ( data.token )
       {
         localStorage.setItem('token', data.token);
+
+       // console.info ("AVER", data);
+      
+      //Recupero el perfil del token
+      if(this.auth.getToken().perfil == "Administrador")
+      {
         this.router.navigateByUrl("/pagina1");
+      }
+      else{
+        this.router.navigateByUrl("/pagina2");  
+      }
+        
       }
     })
     .catch( e => {
       console.log(e);
     } );
   }
+
   administrador ()
   {
     this.user.email = "admin@admin.com"
