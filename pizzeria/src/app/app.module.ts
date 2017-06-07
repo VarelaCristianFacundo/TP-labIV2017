@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, ApplicationRef } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { RouterModule, Routes } from '@angular/router';
@@ -18,6 +19,7 @@ import { AltaPedidoComponent } from './alta-pedido/alta-pedido.component';
 import { AltaReservaComponent } from './components/alta-reserva/alta-reserva.component';
 import { AltaEventoComponent } from './components/alta-evento/alta-evento.component';
 import { LocalesComponent } from './components/locales/locales.component';
+import { AgmCoreModule } from 'angular2-google-maps/core';
 
 
 const appRoutes: Routes = [
@@ -53,6 +55,9 @@ const appRoutes: Routes = [
   imports: [
     BrowserModule,
     FormsModule,
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyCBIeNMEOoYQEDL4S5GlKKP9EcUiOCNr3A'
+    }),
     HttpModule,
     JwtModule,
     RouterModule.forRoot(appRoutes)
