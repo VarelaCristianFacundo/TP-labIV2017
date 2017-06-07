@@ -49,4 +49,14 @@ export class Pagina1Component implements OnInit {
   
   }
 
+  locales ()
+  {/*
+        if(this.auth.getToken().perfil == "Administrador")
+      {*/
+        this.router.navigateByUrl("/locales");
+    //  }
+  
+  }
+
+
 }

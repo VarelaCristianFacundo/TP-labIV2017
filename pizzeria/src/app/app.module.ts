@@ -17,6 +17,7 @@ import { JwtModule } from './jwt/jwt.module';
 import { AltaPedidoComponent } from './alta-pedido/alta-pedido.component';
 import { AltaReservaComponent } from './components/alta-reserva/alta-reserva.component';
 import { AltaEventoComponent } from './components/alta-evento/alta-evento.component';
+import { LocalesComponent } from './components/locales/locales.component';
 
 
 const appRoutes: Routes = [
@@ -27,8 +28,9 @@ const appRoutes: Routes = [
   },
   { path: 'pagina2', component: Pagina2Component },
   { path: 'alta-pedido', component: AltaPedidoComponent },
-  { path: 'alta-reserva', component: AltaPedidoComponent },
-  { path: 'alta-evento', component: AltaPedidoComponent },
+  { path: 'alta-reserva', component: AltaReservaComponent },
+  { path: 'alta-evento', component: AltaEventoComponent },
+  { path: 'locales', component: LocalesComponent },
   { path: 'login', component: LoginComponent },
   { path: '',   redirectTo: '/login', pathMatch: 'full' },
   { path: '**', component: ErrorComponent }
@@ -45,7 +47,8 @@ const appRoutes: Routes = [
     LoginComponent,
     AltaPedidoComponent,
     AltaReservaComponent,
-    AltaEventoComponent
+    AltaEventoComponent,
+    LocalesComponent
   ],
   imports: [
     BrowserModule,
