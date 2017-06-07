@@ -14,6 +14,9 @@ import { WsService }  from './services/ws/ws.service';
 import { AutService } from './services/auth/aut.service';
 import { VerificarJWTService } from './services/verificar-jwt/verificar-jwt.service';
 import { JwtModule } from './jwt/jwt.module';
+import { AltaPedidoComponent } from './alta-pedido/alta-pedido.component';
+import { AltaReservaComponent } from './components/alta-reserva/alta-reserva.component';
+import { AltaEventoComponent } from './components/alta-evento/alta-evento.component';
 
 
 const appRoutes: Routes = [
@@ -22,9 +25,12 @@ const appRoutes: Routes = [
     canActivate: [VerificarJWTService],
     component: Pagina1Component
   },
-  { path: 'pagina2', component: Pagina2Component, canActivate: [VerificarJWTService], },
+  { path: 'pagina2', component: Pagina2Component },
+  { path: 'alta-pedido', component: AltaPedidoComponent },
+  { path: 'alta-reserva', component: AltaPedidoComponent },
+  { path: 'alta-evento', component: AltaPedidoComponent },
   { path: 'login', component: LoginComponent },
-  { path: '',   redirectTo: '/pagina1', pathMatch: 'full' },
+  { path: '',   redirectTo: '/login', pathMatch: 'full' },
   { path: '**', component: ErrorComponent }
 ];
 
@@ -36,7 +42,10 @@ const appRoutes: Routes = [
     Pagina1Component,
     Pagina2Component,
     ErrorComponent,
-    LoginComponent
+    LoginComponent,
+    AltaPedidoComponent,
+    AltaReservaComponent,
+    AltaEventoComponent
   ],
   imports: [
     BrowserModule,
