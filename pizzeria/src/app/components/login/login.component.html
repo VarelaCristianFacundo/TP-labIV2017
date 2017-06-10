@@ -11,7 +11,7 @@
                 <div class="dropdown">
                   <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Tipo de Usuario
                   <span class="caret"></span></button>
-                  <ul class="dropdown-menu">
+                  <ul style="cursor: pointer;" class="dropdown-menu">
                   <li><a (click)="administrador()" value="Administrador">Administrador</a></li>
                   <li><a (click)="encargado()" value="Encargado">Encargado</a></li>
                   <li><a (click)="empleado()" value="Empleado">Empleado</a></li>
@@ -23,9 +23,9 @@
 
                 <input type="password" [(ngModel)]="user.clave" name="clave" required
                 class="form-control" id="inputPassword3" placeholder="Password">
-                <button class="btn btn-lg btn-primary btn-block btn-signin" type="submit">Sign in</button>
+                <button class="btn btn-signin" type="submit">Sign in</button>
             </form><!-- /form -->
-            <a (click)="registrar()" value="Cliente">¿Querés nuestros beneficios?Registrate!</a>
+            <a style="cursor: pointer;" (click)="registrar()" value="Cliente">¿Querés nuestros beneficios?Registrate!</a>
         </div><!-- /card-container -->
     </div><!-- /container -->
 

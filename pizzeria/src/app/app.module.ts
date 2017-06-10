@@ -17,6 +17,7 @@ import { VerificarJWTService } from './services/verificar-jwt/verificar-jwt.serv
 import { JwtModule } from './jwt/jwt.module';
 import { AltaReservaComponent } from './components/alta-reserva/alta-reserva.component';
 import { AltaEventoComponent } from './components/alta-evento/alta-evento.component';
+import { AltaPedidoComponent } from './components/alta-pedido/alta-pedido.component';
 import { LocalesComponent } from './components/locales/locales.component';
 import { AgmCoreModule } from 'angular2-google-maps/core';
 
@@ -30,6 +31,7 @@ const appRoutes: Routes = [
   { path: 'pagina2', component: Pagina2Component },
   { path: 'alta-reserva', component: AltaReservaComponent },
   { path: 'alta-evento', component: AltaEventoComponent },
+  { path: 'alta-pedido', component: AltaPedidoComponent },
   { path: 'locales', component: LocalesComponent },
   { path: 'login', component: LoginComponent },
   { path: '',   redirectTo: '/login', pathMatch: 'full' },
@@ -47,6 +49,7 @@ const appRoutes: Routes = [
     LoginComponent,
     AltaReservaComponent,
     AltaEventoComponent,
+    AltaPedidoComponent,
     LocalesComponent
   ],
   imports: [

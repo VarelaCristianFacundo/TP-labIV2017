@@ -4,11 +4,22 @@
     img{
         width: 100%;
     }
-.container {
+.container  {
     /* remember to set a width */
-    margin-right: auto;
-    margin-left: auto;
+    margin-right: 2cm;
+    margin-left: 2cm;
+    margin-top: 1cm;
+    margin-bottom: 1cm;
     }
+#volver {    
+    background: #993333;
+    margin-right: 10cm;
+    margin-left: 5cm;
+    margin-top: 1cm;
+    margin-bottom: 1cm;
+
+}
+
 
 /*Fade all the DIV when user hovers on any div*/
 .contenedor:hover .panel{

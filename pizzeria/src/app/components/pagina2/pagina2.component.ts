@@ -29,12 +29,9 @@ export class User {
 
 export class Pagina2Component implements OnInit {
 
-  user: User = new User('','','','','M','');
+  user: User = new User('','','','','','Cliente');
 
   constructor(private router: Router, private ws: WsService) {
-  this.user.email = '';
-
-
    }
 
   ngOnInit() {
@@ -55,6 +52,10 @@ export class Pagina2Component implements OnInit {
     })
   }
 
+  volver()
+  {
+  	    this.router.navigateByUrl("/login");
+  }
 
     xwwwfurlenc(srcjson){
     if(typeof srcjson !== "object")

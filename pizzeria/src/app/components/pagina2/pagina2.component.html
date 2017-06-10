@@ -44,7 +44,7 @@
 							<div class="cols-sm-10">
 								<div class="input-group">
 									<span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
-									<input type="text" [(ngModel)]="user.clave" class="form-control" name="password" id="password"  placeholder="Ingrese su contraseña"/>
+									<input type="password" [(ngModel)]="user.clave" class="form-control" name="password" id="password"  placeholder="Ingrese su contraseña"/>
 								</div>
 							</div>
 						</div>
@@ -53,26 +53,15 @@
 						<div class="form-group">
 							<label for="sexo" class="cols-sm-2 control-label">Sexo</label>
 							<div class="cols-sm-10">
-						<label class="radio-inline"><input type="radio" name="optradio">Masculino</label>
-						<label class="radio-inline"><input type="radio" name="optradio">Femenino</label>
+						<label class="radio-inline"><input type="radio"  (click)= "user.sexo='M'" name="optradio">Masculino</label>
+						<label class="radio-inline"><input type="radio" (click)= "user.sexo='F'" name="optradio">Femenino</label>
 						</div>
 						</div>
-
-
-
-						<div class="form-group">
-							<label for="password" class="cols-sm-2 control-label">Perfil</label>
-							<div class="cols-sm-10">
-								<div class="input-group">
-									<span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
-									<input type="text" [(ngModel)]="user.perfil" class="form-control" name="perfil" id="perfil"  placeholder="Ingrese su contraseña"/>
-								</div>
-							</div>
-						</div>
-
 
 						<div class="form-group ">
-							<a target="_blank" type="button" id="button" (click)="agregar()" class="btn btn-primary btn-lg btn-block login-button">Registrar</a>
+							<a align="left" target="_blank" type="button" (click)="agregar()" class="btn btn-primary btn-lg btn-block login-button">Registrar</a>
+
+							<a target="_blank" type="button" id="volver" (click)="volver()" class="btn btn-primary btn-lg btn-block">Volver</a>
 						</div>						
 					</form>
 				</div>

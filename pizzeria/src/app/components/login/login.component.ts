@@ -57,7 +57,7 @@ export class LoginComponent implements OnInit {
        // console.info ("AVER", data);
       
       //Recupero el perfil del token
-      if(this.auth.getToken().perfil == "Administrador")
+      if(this.auth.getToken().perfil == "Cliente")
       {
         this.router.navigateByUrl("/pagina1");
       }
