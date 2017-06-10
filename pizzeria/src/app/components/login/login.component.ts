@@ -25,6 +25,8 @@ export class User {
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css'],
 })
+
+
 export class LoginComponent implements OnInit {
 
   // public form:FormGroup;

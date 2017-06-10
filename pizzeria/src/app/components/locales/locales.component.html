@@ -1,9 +1,10 @@
 <app-menu></app-menu>
-
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCBIeNMEOoYQEDL4S5GlKKP9EcUiOCNr3A&callback=initMap"
+  type="text/javascript"></script>
 <div class="container contenedor">
     <br>
     <div class="row container">
-        <div (click) = "recorrido()" class="col-md-3">
+        <div (click) = "solera()" class="col-md-3">
             <div class="panel panel-info" style="cursor: pointer;">
 				<div class="panel-heading">
 				    <h4 class="">Pizzería Solera</h4>
@@ -16,7 +17,7 @@
 				<!-- <div class="panel-footer">Panel footer</div> -->
 			</div>
         </div>
-        <div (click) = "recorrido()" class="col-md-3">
+        <div (click) = "lavitola()" class="col-md-3">
             <div class="panel panel-info" style="cursor: pointer;">
                 <div class="panel-heading">
                     <h4 class="">Pizzería La Vitola</h4>
@@ -28,7 +29,7 @@
                 </div>
             </div>
         </div>
-        <div (click) = "recorrido()" class="col-md-3">
+        <div (click) = "prontopizza()" class="col-md-3">
             <div class="panel panel-info" style="cursor: pointer;">
                 <div class="panel-heading">
                     <h4 class="">Pizzería Pronto Pizza</h4>
@@ -41,7 +42,7 @@
                 <!-- <div class="panel-footer">Panel footer</div> -->
             </div>
         </div>
-        <div (click) = "recorrido()" class="col-md-3">
+        <div (click) = "lareypizzas()" class="col-md-3">
             <div class="panel panel-info" style="cursor: pointer;">
                 <div class="panel-heading">
                     <h4 class="">Pizzería La Rey Pizzas</h4>
@@ -57,8 +58,6 @@
     </div>
 </div>
 
-<div style="width:80%; margin:0 auto;">
 <sebm-google-map [latitude]="lat" [longitude]="lng">
   <sebm-google-map-marker [latitude]="lat" [longitude]="lng"></sebm-google-map-marker>
 </sebm-google-map>
-</div>

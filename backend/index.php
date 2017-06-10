@@ -37,6 +37,47 @@ $app->get('/traerTodos', function() use($db,$app) {
 
 
 
+//REGISTRO DE USUARIOS
+$app->post("/registro", function() use($app, $db)
+{
+
+	$res = array("resultado" => $app->request->post()); //Devuelvo todo lo que le pasé por POST
+	$p = $app->request->post();
+
+
+	$consulta = $db->prepare("INSERT INTO usuarios (nombre, apellido, email, sexo, perfil,  password) VALUES (:para, :param2, :param3, :param4, :param5, :param6)");
+	$status = 200;
+
+
+	$consulta->bindValue(":para", $p['nombre'], PDO::PARAM_STR);
+	$consulta->bindValue(":param2", $p['apellido'], PDO::PARAM_STR);
+	$consulta->bindValue(":param3", $p['email'], PDO::PARAM_STR);
+	$consulta->bindValue(":param4", $p['sexo'], PDO::PARAM_STR);
+	$consulta->bindValue(":param5", $p['perfil'], PDO::PARAM_STR);
+	$consulta->bindValue(":param6", $p['password'], PDO::PARAM_STR);
+	$exito = $consulta->execute();
+
+	// En el execute es dónde asociamos el :param1 con el valor que le toque.
+	if ($exito)
+		$res = array("rta" => true);
+	else{
+		$res = array("rta" => false);
+		$status = 500;
+	}
+
+	// Indicamos el tipo de contenido y condificación que devolvemos desde el framework Slim.
+	$app->response->headers->set("Content-type", "application/json");
+	$app->response->status(200);
+	$app->response->body(json_encode($res));
+});
+
+
+
+
+
+
+
+//POST PARA EL LOGIN CON JWT
 $app->post("/auth", function() use($app, $db)
 {
 
@@ -248,8 +289,7 @@ $app->get('/traerTodos', function() use($db,$app) {
 
 
 
-// POST: Para crear recursos
-$app->post("/registro/", function() use($app, $db)
+/*$app->post("/registro/", function() use($app, $db)
 {
 
 	$res = array("resultado" => $app->request->post()); //Devuelvo todo lo que le pasé por POST
@@ -279,7 +319,7 @@ $app->post("/registro/", function() use($app, $db)
 	$app->response->headers->set("Content-type", "application/json");
 	$app->response->status(200);
 	$app->response->body(json_encode($res));
-});
+});*/
 
 // PUT: Para editar recursos
 $app->post("/registros/", function() use($app, $db)

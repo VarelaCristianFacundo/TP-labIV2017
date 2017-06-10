@@ -11,7 +11,7 @@ import { AuthHttp } from 'angular2-jwt';
 @Injectable()
 export class WsService {
 
-  url: string = 'http://localhost/TP-labIV2017/backend/index.php/auth';
+  url: string = 'http://localhost/TP-labIV2017/backend/index.php/';
 
 
   constructor(public http: Http, private authHttp: AuthHttp)
@@ -19,6 +19,17 @@ export class WsService {
 
   }
 
+  crearUsuario ( usuario )
+  {
+    let headers = new Headers({ 'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8' });
+    let options = new RequestOptions( {method: RequestMethod.Post, headers: headers });
+
+    return this.http
+      .post(this.url+"registro", usuario, options)
+      .toPromise()
+      .then( this.extractData )
+      .catch( this.handleError );
+  }
 
 //Función para pasar de formato JSON a formato x-www-form-urlencoded
   xwwwfurlenc(srcjson){
@@ -45,7 +56,7 @@ export class WsService {
    */
   get(user: Object)
   {
-    return this.http.get(this.url, user)
+    return this.http.get(this.url+"auth", user)
     .toPromise()
     .then( this.extractData )
     .catch( this.handleError );
@@ -62,7 +73,7 @@ export class WsService {
 
     var pers = this.xwwwfurlenc(user);
 
-    return this.http.post(this.url, pers, options)
+    return this.http.post(this.url+"auth", pers, options)
     .toPromise()
     .then( this.extractData )
     .catch( this.handleError );

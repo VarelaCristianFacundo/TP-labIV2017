@@ -15,7 +15,6 @@ import { WsService }  from './services/ws/ws.service';
 import { AutService } from './services/auth/aut.service';
 import { VerificarJWTService } from './services/verificar-jwt/verificar-jwt.service';
 import { JwtModule } from './jwt/jwt.module';
-import { AltaPedidoComponent } from './alta-pedido/alta-pedido.component';
 import { AltaReservaComponent } from './components/alta-reserva/alta-reserva.component';
 import { AltaEventoComponent } from './components/alta-evento/alta-evento.component';
 import { LocalesComponent } from './components/locales/locales.component';
@@ -29,7 +28,6 @@ const appRoutes: Routes = [
     component: Pagina1Component
   },
   { path: 'pagina2', component: Pagina2Component },
-  { path: 'alta-pedido', component: AltaPedidoComponent },
   { path: 'alta-reserva', component: AltaReservaComponent },
   { path: 'alta-evento', component: AltaEventoComponent },
   { path: 'locales', component: LocalesComponent },
@@ -47,7 +45,6 @@ const appRoutes: Routes = [
     Pagina2Component,
     ErrorComponent,
     LoginComponent,
-    AltaPedidoComponent,
     AltaReservaComponent,
     AltaEventoComponent,
     LocalesComponent
