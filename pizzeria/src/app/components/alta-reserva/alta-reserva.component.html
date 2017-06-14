@@ -1,3 +1,52 @@
-<p>
-  alta-reserva works!
-</p>
+		<div class="container">
+			<div class="row main">
+				<div class="main-login main-center">
+				<h3 align="center">Reserva</h3>
+					<form class="" method="post" action="#">
+						
+						<div class="form-group">
+							<label for="name" class="cols-sm-2 control-label">Fecha</label>
+							<div class="cols-sm-10">
+								<div class="input-group">
+									<span class="input-group-addon"><i class="fa fa-calendar fa" aria-hidden="true"></i></span>
+									<input type="date" [(ngModel)]="reserva.fecha" class="form-control" name="nombre" id="nombre"/>
+                                    <input type="time" [(ngModel)]="reserva.hora" class="form-control" name="apellido" id="apellido"/>
+								</div>
+							</div>
+						</div>
+
+						<div class="form-group">
+							<label for="email" class="cols-sm-2 control-label">Cantidad de Personas</label>
+							<div class="cols-sm-10">
+								<div class="input-group">
+									<span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
+									<input type="number" [(ngModel)]="user.email" class="form-control" name="email" id="email"  placeholder="Ingrese la cantidad" required min=1 max=60/>
+								</div>
+							</div>
+						</div>
+
+
+						<div class="form-group">
+							<label for="password" class="cols-sm-2 control-label">Local  </label>
+							<div class="cols-sm-10">
+								<div class="input-group">
+									<span class="input-group-addon"><i class="fa fa-home fa-lg" aria-hidden="true"></i></span>
+									<select class="form-control" name="local" required>
+                                      <option>Pizzería Solera</option>
+                                      <option>Pizzería La Vitola</option>
+                                      <option>Pizzería Pronto Pizza</option>
+                                      <option>Pizzería La Rey Pizzas</option>
+                                  </select>
+                                </div>
+							</div>
+						</div>
+
+						<div class="form-group ">
+							<a align="left" target="_blank" type="button" (click)="agregar()" class="btn btn-primary btn-lg btn-block login-button">Reservar</a>
+
+							<a target="_blank" type="button" id="volver" (click)="volver()" class="btn btn-primary btn-lg btn-block">Volver</a>
+						</div>						
+					</form>
+				</div>
+			</div>
+		</div>

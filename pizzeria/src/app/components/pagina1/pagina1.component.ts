@@ -32,7 +32,8 @@ export class Pagina1Component implements OnInit {
     //  }
   
   }
-   altaReserva ()
+  
+  altaReserva ()
   {/*
         if(this.auth.getToken().perfil == "Administrador")
       {*/
