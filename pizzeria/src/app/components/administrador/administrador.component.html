@@ -1,0 +1,56 @@
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="/administrador">Home</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li><a routerLink="/abmusuarios" routerLinkActive="active">ABM Usuarios</a></li>
+      <li><a routerLink="/abmlocales" routerLinkActive="active">ABM Locales</a></li>
+      <li><a routerLink="/estadisticas" routerLinkActive="active">Estadísticas</a></li>
+      <li><a style="margin-left: 21cm;" [routerLink]="[]" (click)="salir()" routerLinkActive="active">Logout</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="container contenedor">
+    <br>
+    <div class="row container">
+        <div (click) = "abmUsuarios()" class="col-md-4">
+            <div class="panel panel-info" style="cursor: pointer;">
+				<div class="panel-heading">
+				    <h4 class="">ABM USUARIOS</h4>
+				</div>
+				<div class="panel-body">
+				    Alta, baja y modificación de usuarios.
+					<hr>
+				    <img src="../../assets/img/abmusuarios.jpg" alt="" class="img-rounded img-responsive">
+				</div>
+				<!-- <div class="panel-footer">Panel footer</div> -->
+			</div>
+        </div>
+        <div (click) = "abmLocales()" class="col-md-4">
+            <div class="panel panel-info" style="cursor: pointer;">
+                <div class="panel-heading">
+                    <h4 class="">ABM LOCALES</h4>
+                </div>
+                <div class="panel-body">
+					Alta, baja y modificación de locales.
+					<br><hr>
+					<img src="../../assets/img/abmlocales.jpg" alt="" class="img-rounded img-responsive">
+                </div>
+            </div>
+        </div>
+        <div (click) = "estadisticas()" class="col-md-4">
+            <div class="panel panel-info" style="cursor: pointer;">
+                <div class="panel-heading">
+                    <h4 class="">ESTADISTICAS</h4>
+                </div>
+                <div class="panel-body">
+					Verifique las estadísticas entre locales.
+					<br><hr>
+					<img src="../../assets/img/estadisticas.jpg" alt="" class="img-rounded img-responsive">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

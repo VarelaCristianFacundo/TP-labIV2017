@@ -1,18 +1,19 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { WsService } from '../../services/ws/ws.service';
+import { AutService } from '../../services/auth/aut.service';
 
 
 export class Reserva {
-	public usuario: string ='';
+	public id_usuario: number;
 	public local: string ='';
 	public fecha: string ='';
 	public hora: string='';
 	public cantidad: number;
 
-  constructor(usuario:string, local:string, fecha: string, hora: string, cantidad: number)
+  constructor(id_usuario:number, local:string, fecha: string, hora: string, cantidad: number)
   {
-  	this.usuario = usuario;
+  	this.id_usuario = id_usuario;
   	this.local = local;
   	this.fecha = fecha;
   	this.hora = hora;
@@ -30,9 +31,9 @@ export class Reserva {
 })
 export class AltaReservaComponent implements OnInit {
 
-  reserva: Reserva = new Reserva('','','','',0);
+  reserva: Reserva = new Reserva(0,'','','',0);
 
-  constructor(private router: Router, private ws: WsService) 
+  constructor(private router: Router, private ws: WsService, private auth: AutService) 
   { 
 
   }
@@ -46,7 +47,7 @@ export class AltaReservaComponent implements OnInit {
     //var persona = {id: 4898, nombre:"Facundo", apellido:"Varela", dni:"32184", foto:"341654.jpg"};
     //var pers = this.xwwwfurlenc({nombre: "facu", apellido: "Varela", email: "a@a.a", sexo: "M",
     //perfil: "Administrador", password: "1234"});
-    var pers = this.xwwwfurlenc({usuario: this.reserva.usuario, local: this.reserva.local,
+    var pers = this.xwwwfurlenc({id_usuario: this.auth.getToken().id, local: this.reserva.local,
     fecha: this.reserva.fecha, hora: this.reserva.hora, cantidad: this.reserva.cantidad});
     this.ws.crearUsuario(pers)
     .then(data => {

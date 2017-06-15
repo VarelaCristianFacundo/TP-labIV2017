@@ -15,7 +15,7 @@ export class MenuComponent implements OnInit {
   salir()
   {
     localStorage.setItem('token', null);
-    window.alert('Chauuuuuu!!!');
+    window.alert('Hasta Luego!!!');
     this.router.navigate(['/login']);
   }
 }

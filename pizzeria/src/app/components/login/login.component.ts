@@ -61,8 +61,9 @@ export class LoginComponent implements OnInit {
       {
         this.router.navigateByUrl("/pagina1");
       }
-      else{
-        this.router.navigateByUrl("/pagina2");  
+      if(this.auth.getToken().perfil == "Administrador")
+      {
+        this.router.navigateByUrl("/administrador");  
       }
         
       }

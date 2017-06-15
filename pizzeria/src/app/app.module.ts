@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { RouterModule, Routes } from '@angular/router';
+import { Ng2SmartTableModule } from 'ng2-smart-table';
 
 import { AppComponent } from './app.component';
 import { MenuComponent } from './components/menu/menu.component';
@@ -20,6 +21,10 @@ import { AltaEventoComponent } from './components/alta-evento/alta-evento.compon
 import { AltaPedidoComponent } from './components/alta-pedido/alta-pedido.component';
 import { LocalesComponent } from './components/locales/locales.component';
 import { AgmCoreModule } from 'angular2-google-maps/core';
+import { AdministradorComponent } from './components/administrador/administrador.component';
+import { AbmusuariosComponent } from './components/abmusuarios/abmusuarios.component';
+import { AbmlocalesComponent } from './components/abmlocales/abmlocales.component';
+import { EstadisticasComponent } from './components/estadisticas/estadisticas.component';
 
 
 const appRoutes: Routes = [
@@ -32,6 +37,10 @@ const appRoutes: Routes = [
   { path: 'alta-reserva', component: AltaReservaComponent },
   { path: 'alta-evento', component: AltaEventoComponent },
   { path: 'alta-pedido', component: AltaPedidoComponent },
+  { path: 'administrador', component: AdministradorComponent },
+  { path: 'abmusuarios', component: AbmusuariosComponent },
+  { path: 'abmlocales', component: AbmlocalesComponent },
+  { path: 'estadisticas', component: EstadisticasComponent },
   { path: 'locales', component: LocalesComponent },
   { path: 'login', component: LoginComponent },
   { path: '',   redirectTo: '/login', pathMatch: 'full' },
@@ -50,10 +59,15 @@ const appRoutes: Routes = [
     AltaReservaComponent,
     AltaEventoComponent,
     AltaPedidoComponent,
-    LocalesComponent
+    LocalesComponent,
+    AdministradorComponent,
+    AbmusuariosComponent,
+    AbmlocalesComponent,
+    EstadisticasComponent
   ],
   imports: [
     BrowserModule,
+    Ng2SmartTableModule,
     FormsModule,
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyCBIeNMEOoYQEDL4S5GlKKP9EcUiOCNr3A'

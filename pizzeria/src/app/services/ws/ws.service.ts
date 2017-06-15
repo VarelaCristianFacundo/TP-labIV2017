@@ -31,6 +31,16 @@ export class WsService {
       .catch( this.handleError );
   }
 
+  traerDatosUsuarios ()
+  {
+    return this.http
+      .get( this.url + "traerDatosUsuarios")
+      .toPromise()
+      .then( this.extractData )
+      .catch( this.handleError );
+  }
+
+
 //Función para pasar de formato JSON a formato x-www-form-urlencoded
   xwwwfurlenc(srcjson){
     if(typeof srcjson !== "object")
