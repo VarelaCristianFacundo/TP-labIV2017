@@ -53,7 +53,8 @@ export class LoginComponent implements OnInit {
       if ( data.token )
       {
         localStorage.setItem('token', data.token);
-
+        var perfil = this.auth.getToken().perfil;
+        console.log (perfil);
        // console.info ("AVER", data);
       
       //Recupero el perfil del token
@@ -65,7 +66,17 @@ export class LoginComponent implements OnInit {
       {
         this.router.navigateByUrl("/administrador");  
       }
-        
+
+      if(this.auth.getToken().perfil == "Encargado")
+      {
+        this.router.navigateByUrl("/encargado");  
+      }
+       
+      if(this.auth.getToken().perfil == "Empleado")
+      {
+        this.router.navigateByUrl("/empleado");  
+      }
+
       }
     })
     .catch( e => {

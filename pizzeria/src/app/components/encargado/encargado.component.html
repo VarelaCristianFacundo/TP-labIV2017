@@ -1,0 +1,56 @@
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="/administrador">Home</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li><a routerLink="/abmempleados" routerLinkActive="active">Empleados</a></li>
+      <li><a routerLink="/abmpedidos" routerLinkActive="active">ABM Pedidos</a></li>
+      <li><a routerLink="/abmproductos" routerLinkActive="active">ABM Productos</a></li>
+      <li><a style="margin-left: 21cm;" [routerLink]="[]" (click)="salir()" routerLinkActive="active">Logout</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="container contenedor">
+    <br>
+    <div class="row container">
+        <div (click) = "abmEmpleados()" class="col-md-4">
+            <div class="panel panel-info" style="cursor: pointer;">
+				<div class="panel-heading">
+				    <h4 class="">Empleados</h4>
+				</div>
+				<div class="panel-body">
+				    Modificación de empleados.
+					<hr>
+				    <img src="../../assets/img/abmusuarios.jpg" alt="" class="img-rounded img-responsive">
+				</div>
+				<!-- <div class="panel-footer">Panel footer</div> -->
+			</div>
+        </div>
+        <div (click) = "abmPedidos()" class="col-md-4">
+            <div class="panel panel-info" style="cursor: pointer;">
+                <div class="panel-heading">
+                    <h4 class="">ABM Pedidos</h4>
+                </div>
+                <div class="panel-body">
+					Alta, baja y modificación de pedidos.
+					<br><hr>
+					<img src="../../assets/img/abmpedidos.jpg" alt="" class="img-rounded img-responsive">
+                </div>
+            </div>
+        </div>
+        <div (click) = "abmProductos()" class="col-md-4">
+            <div class="panel panel-info" style="cursor: pointer;">
+                <div class="panel-heading">
+                    <h4 class="">ABM Productos</h4>
+                </div>
+                <div class="panel-body">
+					Alta, baja y modificación de productos.
+					<br><hr>
+					<img src="../../assets/img/abmproductos.jpg" alt="" class="img-rounded img-responsive">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -5,13 +5,13 @@ import { Router } from '@angular/router';
 import { WsService } from '../../services/ws/ws.service';
 
 @Component({
-  selector: 'app-abmusuarios',
-  templateUrl: './abmusuarios.component.html',
-  styleUrls: ['./abmusuarios.component.css']
+  selector: 'app-abmproductos',
+  templateUrl: './abmproductos.component.html',
+  styleUrls: ['./abmproductos.component.css']
 })
-export class AbmusuariosComponent implements OnInit {
+export class AbmproductosComponent implements OnInit {
 
-	source: LocalDataSource = new LocalDataSource();
+source: LocalDataSource = new LocalDataSource();
 
   settings = {
     add: {
@@ -49,59 +49,35 @@ export class AbmusuariosComponent implements OnInit {
       id: {
         title: 'ID'
       },
-      nombre: {
-        title: 'Nombre'
+      descripcion: {
+        title: 'Descripcion'
       },
-      apellido: {
-        title: 'Apellido'
+      categoria: {
+        title: 'Categoria'
       },
-      email: {
-        title: 'Email'
-      },
-      sexo: {
-        title: 'Sexo'
-      },
-      password: {
-        title: 'Password'
-      },
+      precio: {
+        title: 'Precio'
+      },      
     }
   }
 
-
-
-  constructor(private router: Router, private ws: WsService) {
-  	ws.traerDatosUsuarios()
+  constructor(private router: Router, private ws: WsService) { 
+	ws.traerDatosProductos()
     .then(data => {
       console.log(data);
       this.source.load(data);
-    })
+  	})
   }
 
   ngOnInit() {
   }
-
-  abmUsuarios()
-  {
-  	this.router.navigateByUrl("/abmusuarios");
-  }
-
-  abmLocales()
-  {
-  	this.router.navigateByUrl("/abmlocales");
-  }
-
-  estadisticas()
-  {
-  	this.router.navigateByUrl("/estadisticas");
-  }
-
 
   editar ( e )
   {
     console.log("Evento modificar: ",e);
     var pers = this.xwwwfurlenc(e.newData);
    // this.datos.editarPersona(pers)
-     this.ws.editarUsuario(pers)
+     this.ws.editarProducto(pers)
     .then(data => {
       console.log("Editar: ", data);
       e.confirm.resolve();
@@ -112,13 +88,13 @@ export class AbmusuariosComponent implements OnInit {
   agregar ( e )
   {
     console.log("Evento crear: ",e);
-    console.log ("Persona", pers);
+    console.log ("Persona", e.newData);
     //this.datos.crearPersona(pers)
-	var pers = this.xwwwfurlenc({nombre: e.newData.nombre, apellido: e.newData.apellido,
-    email: e.newData.email, sexo: e.newData.sexo, perfil: e.newData.perfil, password: e.newData.clave });
+	var pers = this.xwwwfurlenc({descripcion: e.newData.descripcion, categoria: e.newData.categoria,
+    precio: e.newData.precio});
 
 
-    this.ws.crearUsuario(pers)
+    this.ws.crearProducto(pers)
     .then(data => {
       console.log("Alta: ", data);
       e.confirm.resolve();
@@ -132,7 +108,7 @@ export class AbmusuariosComponent implements OnInit {
     console.log("Evento borrar: ",e);
     var pers = this.xwwwfurlenc(e.data);
     //this.datos.borrarPersona(pers)
-    this.ws.borrarUsuario(pers)
+    this.ws.borrarProducto(pers)
     .then(data => {
       console.log("Borrar: ", data);
       e.confirm.resolve();
@@ -148,8 +124,7 @@ export class AbmusuariosComponent implements OnInit {
     this.router.navigate(['/login']);
   }
 
-
-  xwwwfurlenc(srcjson){
+	xwwwfurlenc(srcjson){
     if(typeof srcjson !== "object")
       if(typeof console !== "undefined"){
         console.log("\"srcjson\" is not a JSON object");
@@ -163,6 +138,6 @@ export class AbmusuariosComponent implements OnInit {
         if(i < (keys.length-1))urljson+="&";
     }
     return urljson;
-  }
+  	}
 
 }

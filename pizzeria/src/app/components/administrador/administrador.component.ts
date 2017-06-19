@@ -28,4 +28,11 @@ export class AdministradorComponent implements OnInit {
   	this.router.navigateByUrl("/estadisticas");
   }
 
+  salir()
+  {
+    localStorage.setItem('token', null);
+    window.alert('Hasta Luego!!!');
+    this.router.navigate(['/login']);
+  }
+
 }

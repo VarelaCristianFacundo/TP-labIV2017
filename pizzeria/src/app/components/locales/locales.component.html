@@ -1,21 +1,19 @@
 <app-menu></app-menu>
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCBIeNMEOoYQEDL4S5GlKKP9EcUiOCNr3A&callback=initMap"
-  type="text/javascript"></script>
 <div class="container contenedor">
     <br>
     <div class="row container">
         <div (click) = "solera()" class="col-md-3">
             <div class="panel panel-info" style="cursor: pointer;">
-				<div class="panel-heading">
-				    <h4 class="">Pizzería Solera</h4>
-				</div>
-				<div class="panel-body">
-				    Realice su pedido en el local que desee.
-					<hr>
-				    <img src="../../assets/img/Pizzerias/Solera.jpg" alt="" class="img-rounded img-responsive">
-				</div>
-				<!-- <div class="panel-footer">Panel footer</div> -->
-			</div>
+        <div class="panel-heading">
+            <h4 class="">Pizzería Solera</h4>
+        </div>
+        <div class="panel-body">
+            Realice su pedido en el local que desee.
+          <hr>
+            <img src="../../assets/img/Pizzerias/Solera.jpg" alt="" class="img-rounded img-responsive">
+        </div>
+        <!-- <div class="panel-footer">Panel footer</div> -->
+      </div>
         </div>
         <div (click) = "lavitola()" class="col-md-3">
             <div class="panel panel-info" style="cursor: pointer;">
@@ -23,9 +21,9 @@
                     <h4 class="">Pizzería La Vitola</h4>
                 </div>
                 <div class="panel-body">
-					Solicite su reserva de mesa en cualquiera de nuestros locales.
-					<br><hr>
-					<img src="../../assets/img/Pizzerias/LaVitola.jpg" alt="" class="img-rounded img-responsive">
+          Solicite su reserva de mesa en cualquiera de nuestros locales.
+          <br><hr>
+          <img src="../../assets/img/Pizzerias/LaVitola.jpg" alt="" class="img-rounded img-responsive">
                 </div>
             </div>
         </div>
@@ -58,6 +56,20 @@
     </div>
 </div>
 
-<sebm-google-map [latitude]="lat" [longitude]="lng">
-  <sebm-google-map-marker [latitude]="lat" [longitude]="lng"></sebm-google-map-marker>
-</sebm-google-map>
+      <div class="form-group">
+        
+        <input placeholder="Enter destination" autocorrect="off" autocapitalize="off" spellcheck="off" type="text" class="form-control" #pickupOutput [formControl]="destinationOutput" >
+      </div>
+       <sebm-google-map [latitude]="latitude" [longitude]="longitude" [scrollwheel]="false" [zoom]="zoom"  >
+                <!-- <sebm-google-map-marker [latitude]="latitude" [longitude]="longitude" [iconUrl]="iconurl">
+                    <sebm-google-map-info-window>
+                        <strong>InfoWindow content</strong>
+                    </sebm-google-map-info-window>
+                </sebm-google-map-marker> -->
+                <sebm-google-map-directions [origin]="origin" [destination]="destination">
+                  <sebm-google-map-info-window [disableAutoPan]="true">
+                    Hi, this is the content of the <strong>info window</strong>
+                  </sebm-google-map-info-window>
+
+                </sebm-google-map-directions>
+              </sebm-google-map>

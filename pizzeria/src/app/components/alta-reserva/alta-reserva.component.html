@@ -1,3 +1,4 @@
+<app-menu></app-menu>
 		<div class="container">
 			<div class="row main">
 				<div class="main-login main-center">
@@ -20,7 +21,7 @@
 							<div class="cols-sm-10">
 								<div class="input-group">
 									<span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
-									<input type="number" [(ngModel)]="user.email" class="form-control" name="email" id="email"  placeholder="Ingrese la cantidad" required min=1 max=60/>
+									<input type="number" [(ngModel)]="reserva.cantidad" class="form-control" name="email" id="email"  placeholder="Ingrese la cantidad" required min=1 max=60/>
 								</div>
 							</div>
 						</div>
@@ -31,11 +32,11 @@
 							<div class="cols-sm-10">
 								<div class="input-group">
 									<span class="input-group-addon"><i class="fa fa-home fa-lg" aria-hidden="true"></i></span>
-									<select class="form-control" name="local" required>
-                                      <option>Pizzería Solera</option>
-                                      <option>Pizzería La Vitola</option>
-                                      <option>Pizzería Pronto Pizza</option>
-                                      <option>Pizzería La Rey Pizzas</option>
+									<select class="form-control" [(ngModel)]="reserva.local" name="local" required>
+                                      <option value="1">Pizzería Solera</option>
+                                      <option value="2">Pizzería La Vitola</option>
+                                      <option value="3">Pizzería Pronto Pizza</option>
+                                      <option value="4">Pizzería La Rey Pizzas</option>
                                   </select>
                                 </div>
 							</div>

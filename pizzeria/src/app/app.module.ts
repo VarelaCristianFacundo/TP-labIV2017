@@ -1,10 +1,12 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, ApplicationRef } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { RouterModule, Routes } from '@angular/router';
 import { Ng2SmartTableModule } from 'ng2-smart-table';
+import { NguiMapModule} from '@ngui/map';
+import { DataTableModule } from "ng2-data-table";
 
 import { AppComponent } from './app.component';
 import { MenuComponent } from './components/menu/menu.component';
@@ -25,6 +27,13 @@ import { AdministradorComponent } from './components/administrador/administrador
 import { AbmusuariosComponent } from './components/abmusuarios/abmusuarios.component';
 import { AbmlocalesComponent } from './components/abmlocales/abmlocales.component';
 import { EstadisticasComponent } from './components/estadisticas/estadisticas.component';
+//import { GooglrMapDirective } from './googlr-map.directive';
+import { DirectionsMapDirective } from './googlr-map.directive';
+import { EncargadoComponent } from './components/encargado/encargado.component';
+import { EmpleadoComponent } from './components/empleado/empleado.component';
+import { AbmempleadosComponent } from './components/abmempleados/abmempleados.component';
+import { AbmpedidosComponent } from './components/abmpedidos/abmpedidos.component';
+import { AbmproductosComponent } from './components/abmproductos/abmproductos.component';
 
 
 const appRoutes: Routes = [
@@ -43,6 +52,11 @@ const appRoutes: Routes = [
   { path: 'estadisticas', component: EstadisticasComponent },
   { path: 'locales', component: LocalesComponent },
   { path: 'login', component: LoginComponent },
+  { path: 'encargado', component: EncargadoComponent },
+  { path: 'empleado', component: EmpleadoComponent },
+  { path: 'abmpedidos', component: AbmpedidosComponent },
+  { path: 'abmempleados', component: AbmempleadosComponent },
+  { path: 'abmproductos', component: AbmproductosComponent },
   { path: '',   redirectTo: '/login', pathMatch: 'full' },
   { path: '**', component: ErrorComponent }
 ];
@@ -56,6 +70,7 @@ const appRoutes: Routes = [
     Pagina2Component,
     ErrorComponent,
     LoginComponent,
+    DirectionsMapDirective,
     AltaReservaComponent,
     AltaEventoComponent,
     AltaPedidoComponent,
@@ -63,17 +78,26 @@ const appRoutes: Routes = [
     AdministradorComponent,
     AbmusuariosComponent,
     AbmlocalesComponent,
-    EstadisticasComponent
+    EstadisticasComponent,
+    EncargadoComponent,
+    EmpleadoComponent,
+    AbmempleadosComponent,
+    AbmpedidosComponent,
+    AbmproductosComponent
   ],
   imports: [
     BrowserModule,
     Ng2SmartTableModule,
+    CommonModule,
     FormsModule,
+    DataTableModule,
     AgmCoreModule.forRoot({
-      apiKey: 'AIzaSyCBIeNMEOoYQEDL4S5GlKKP9EcUiOCNr3A'
+      apiKey: 'AIzaSyCBIeNMEOoYQEDL4S5GlKKP9EcUiOCNr3A',
+      libraries: ["places"]
     }),
     HttpModule,
     JwtModule,
+    ReactiveFormsModule,
     RouterModule.forRoot(appRoutes)
   ],
   providers: [

@@ -4,9 +4,9 @@
       <a class="navbar-brand" href="/administrador">Home</a>
     </div>
     <ul class="nav navbar-nav">
-      <li><a routerLink="/abmusuarios" routerLinkActive="active">ABM Usuarios</a></li>
-      <li><a routerLink="/abmlocales" routerLinkActive="active">ABM Locales</a></li>
-      <li><a routerLink="/estadisticas" routerLinkActive="active">Estadísticas</a></li>
+      <li><a routerLink="/abmempleados" routerLinkActive="active">Empleados</a></li>
+      <li><a routerLink="/abmpedidos" routerLinkActive="active">ABM Pedidos</a></li>
+      <li><a routerLink="/abmproductos" routerLinkActive="active">ABM Productos</a></li>
       <li><a style="margin-left: 21cm;" [routerLink]="[]" (click)="salir()" routerLinkActive="active">Logout</a></li>
     </ul>
   </div>
@@ -24,6 +24,7 @@
     [source]="source"
     (editConfirm)='editar($event)'
     (edit)='editar($event)'
+    (userRowSelect)='cmselection($event)'
     (createConfirm)='agregar($event)'
     (deleteConfirm)='borrar($event)'
     (delete)='borrar($event)'

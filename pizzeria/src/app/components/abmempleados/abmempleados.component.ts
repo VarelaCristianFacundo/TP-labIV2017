@@ -5,11 +5,11 @@ import { Router } from '@angular/router';
 import { WsService } from '../../services/ws/ws.service';
 
 @Component({
-  selector: 'app-abmusuarios',
-  templateUrl: './abmusuarios.component.html',
-  styleUrls: ['./abmusuarios.component.css']
+  selector: 'app-abmempleados',
+  templateUrl: './abmempleados.component.html',
+  styleUrls: ['./abmempleados.component.css']
 })
-export class AbmusuariosComponent implements OnInit {
+export class AbmempleadosComponent implements OnInit {
 
 	source: LocalDataSource = new LocalDataSource();
 
@@ -68,33 +68,16 @@ export class AbmusuariosComponent implements OnInit {
   }
 
 
-
   constructor(private router: Router, private ws: WsService) {
   	ws.traerDatosUsuarios()
     .then(data => {
       console.log(data);
       this.source.load(data);
-    })
+  	})
   }
 
   ngOnInit() {
   }
-
-  abmUsuarios()
-  {
-  	this.router.navigateByUrl("/abmusuarios");
-  }
-
-  abmLocales()
-  {
-  	this.router.navigateByUrl("/abmlocales");
-  }
-
-  estadisticas()
-  {
-  	this.router.navigateByUrl("/estadisticas");
-  }
-
 
   editar ( e )
   {
@@ -148,8 +131,7 @@ export class AbmusuariosComponent implements OnInit {
     this.router.navigate(['/login']);
   }
 
-
-  xwwwfurlenc(srcjson){
+	xwwwfurlenc(srcjson){
     if(typeof srcjson !== "object")
       if(typeof console !== "undefined"){
         console.log("\"srcjson\" is not a JSON object");
@@ -163,6 +145,7 @@ export class AbmusuariosComponent implements OnInit {
         if(i < (keys.length-1))urljson+="&";
     }
     return urljson;
-  }
+  	}
+
 
 }

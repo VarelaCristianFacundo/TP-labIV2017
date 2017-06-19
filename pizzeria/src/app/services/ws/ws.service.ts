@@ -19,6 +19,128 @@ export class WsService {
 
   }
 
+  crearReserva ( pedido )
+  {
+    let headers = new Headers({ 'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8' });
+    let options = new RequestOptions( {method: RequestMethod.Post, headers: headers });
+
+    return this.http
+      .post(this.url+"altaReserva", pedido, options)
+      .toPromise()
+      .then( this.extractData )
+      .catch( this.handleError );
+  }
+
+ crearPedido ( pedidos )
+  {
+    let headers = new Headers({ 'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8' });
+    let options = new RequestOptions( {method: RequestMethod.Post, headers: headers });
+
+    return this.http
+      .post(this.url+"altaPedido", pedidos, options)
+      .toPromise()
+      .then( this.extractData )
+      .catch( this.handleError );
+  }
+
+  editarPedido ( pedido )
+  {
+    let headers = new Headers({ 'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8' });    
+    let options = new RequestOptions( {method: RequestMethod.Post, headers: headers });
+
+    return this.http
+      .post(this.url + "editarPedido", pedido, options)
+      .toPromise()
+      .then( this.extractData )
+      .catch( this.handleError );
+  }
+
+  borrarPedido ( pedido )
+  {
+    let headers = new Headers({ 'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8' });    
+    let options = new RequestOptions( {method: RequestMethod.Post, headers: headers });
+
+    return this.http
+      .post(this.url+ "borrarPedido", pedido, options)
+      .toPromise()
+      .then( this.extractData )
+      .catch( this.handleError );
+  }
+
+  crearProducto ( producto )
+  {
+    let headers = new Headers({ 'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8' });
+    let options = new RequestOptions( {method: RequestMethod.Post, headers: headers });
+
+    return this.http
+      .post(this.url+"altaProducto", producto, options)
+      .toPromise()
+      .then( this.extractData )
+      .catch( this.handleError );
+  }
+
+  editarProducto ( producto )
+  {
+    let headers = new Headers({ 'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8' });    
+    let options = new RequestOptions( {method: RequestMethod.Post, headers: headers });
+
+    return this.http
+      .post(this.url + "editarProducto", producto, options)
+      .toPromise()
+      .then( this.extractData )
+      .catch( this.handleError );
+  }
+
+  borrarProducto ( producto )
+  {
+    let headers = new Headers({ 'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8' });    
+    let options = new RequestOptions( {method: RequestMethod.Post, headers: headers });
+
+    return this.http
+      .post(this.url+ "borrarProducto", producto, options)
+      .toPromise()
+      .then( this.extractData )
+      .catch( this.handleError );
+  }
+
+  crearLocal ( local )
+  {
+    let headers = new Headers({ 'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8' });
+    let options = new RequestOptions( {method: RequestMethod.Post, headers: headers });
+
+    return this.http
+      .post(this.url+"altaLocal", local, options)
+      .toPromise()
+      .then( this.extractData )
+      .catch( this.handleError );
+  }
+
+
+  editarLocal ( local )
+  {
+    let headers = new Headers({ 'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8' });    
+    let options = new RequestOptions( {method: RequestMethod.Post, headers: headers });
+
+    return this.http
+      .post(this.url + "editarLocal", local, options)
+      .toPromise()
+      .then( this.extractData )
+      .catch( this.handleError );
+  }
+
+  borrarLocal ( local )
+  {
+    let headers = new Headers({ 'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8' });    
+    let options = new RequestOptions( {method: RequestMethod.Post, headers: headers });
+
+    return this.http
+      .post(this.url+ "borrarLocal", local, options)
+      .toPromise()
+      .then( this.extractData )
+      .catch( this.handleError );
+  }
+
+
   crearUsuario ( usuario )
   {
     let headers = new Headers({ 'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8' });
@@ -31,10 +153,61 @@ export class WsService {
       .catch( this.handleError );
   }
 
+  editarUsuario ( persona )
+  {
+    let headers = new Headers({ 'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8' });    
+    let options = new RequestOptions( {method: RequestMethod.Post, headers: headers });
+
+    return this.http
+      .post(this.url + "editarUser", persona, options)
+      .toPromise()
+      .then( this.extractData )
+      .catch( this.handleError );
+  }
+
+  borrarUsuario ( persona )
+  {
+    let headers = new Headers({ 'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8' });    
+    let options = new RequestOptions( {method: RequestMethod.Post, headers: headers });
+
+    return this.http
+      .post(this.url+ "borrarUser", persona, options)
+      .toPromise()
+      .then( this.extractData )
+      .catch( this.handleError );
+  }
+
+  traerDatosPedidos ()
+  {
+    return this.http
+      .get( this.url + "traerDatosPedidos")
+      .toPromise()
+      .then( this.extractData )
+      .catch( this.handleError );
+  }
+
   traerDatosUsuarios ()
   {
     return this.http
       .get( this.url + "traerDatosUsuarios")
+      .toPromise()
+      .then( this.extractData )
+      .catch( this.handleError );
+  }
+
+  traerDatosLocales ()
+  {
+    return this.http
+      .get( this.url + "traerDatosLocales")
+      .toPromise()
+      .then( this.extractData )
+      .catch( this.handleError );
+  }
+
+  traerDatosProductos ()
+  {
+    return this.http
+      .get( this.url + "traerDatosProductos")
       .toPromise()
       .then( this.extractData )
       .catch( this.handleError );

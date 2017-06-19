@@ -43,13 +43,13 @@ export class AltaReservaComponent implements OnInit {
 
   agregar ( )
   {
-    console.log("Evento crear: ",this.reserva);
+    console.log("Evento crear: ",this.auth.getToken().id);
     //var persona = {id: 4898, nombre:"Facundo", apellido:"Varela", dni:"32184", foto:"341654.jpg"};
     //var pers = this.xwwwfurlenc({nombre: "facu", apellido: "Varela", email: "a@a.a", sexo: "M",
     //perfil: "Administrador", password: "1234"});
-    var pers = this.xwwwfurlenc({id_usuario: this.auth.getToken().id, local: this.reserva.local,
-    fecha: this.reserva.fecha, hora: this.reserva.hora, cantidad: this.reserva.cantidad});
-    this.ws.crearUsuario(pers)
+    var pedido = this.xwwwfurlenc({id_usuario: this.auth.getToken().id, local: this.reserva.local,
+    fecha: this.reserva.fecha + " " + this.reserva.hora, cantidad: this.reserva.cantidad});
+    this.ws.crearReserva(pedido)
     .then(data => {
       console.log("Alta: ", data);
  //     e.confirm.resolve();
