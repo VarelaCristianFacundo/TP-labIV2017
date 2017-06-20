@@ -13,7 +13,7 @@
 </nav>
 
 <div class="container contenedor">
-<table class="row container" [mfData]="datos" #mf="mfDataTable" [mfRowsOnPage]="5" (mfSelectedEntities)="setSelectedEntities($event)">
+<table class="row container" style="width: 100%; margin: 0 auto;" [mfData]="datos" #mf="mfDataTable" [mfRowsOnPage]="5" (mfSelectedEntities)="setSelectedEntities($event)">
     <thead class="panel panel-info">
         <tr>
             <th>
@@ -46,13 +46,13 @@
         </tr>
     </tfoot>
 </table>
-    <div class="row container">
+    <div class="row container" style="margin-left: -30px;">
         <div (click) = "solera()" class="col-md-3">
             <div class="panel panel-info" style="cursor: pointer;">
         <div class="panel-heading">
             <h4 class="">Pizzería Solera</h4>
         </div>
-        <div class="panel-body">
+        <div class="panel-body seleccion">
             <img src="../../assets/img/Pizzerias/Solera.jpg" alt="" class="img-rounded img-responsive">
         </div>
         <!-- <div class="panel-footer">Panel footer</div> -->
@@ -63,7 +63,7 @@
                 <div class="panel-heading">
                     <h4 class="">Pizzería La Vitola</h4>
                 </div>
-                <div class="panel-body">
+                <div class="panel-body seleccion">
           <img src="../../assets/img/Pizzerias/LaVitola.jpg" alt="" class="img-rounded img-responsive">
                 </div>
             </div>
@@ -73,7 +73,7 @@
                 <div class="panel-heading">
                     <h4 class="">Pizzería Pronto Pizza</h4>
                 </div>
-                <div class="panel-body">
+                <div class="panel-body seleccion">
                     <img src="../../assets/img/Pizzerias/ProntoPizza.jpg" alt="" class="img-rounded img-responsive">
                 </div>
                 <!-- <div class="panel-footer">Panel footer</div> -->
@@ -84,7 +84,7 @@
                 <div class="panel-heading">
                     <h4 class="">Pizzería La Rey Pizzas</h4>
                 </div>
-                <div class="panel-body">
+                <div class="panel-body seleccion">
                     <img src="../../assets/img/Pizzerias/LaRey.jpg" alt="" class="img-rounded img-responsive">
                 </div>
                 <!-- <div class="panel-footer">Panel footer</div> -->

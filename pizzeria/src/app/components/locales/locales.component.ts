@@ -25,6 +25,9 @@ export class LocalesComponent implements OnInit {
     public estimatedTime: any;
     public estimatedDistance: any;
 
+
+    @ViewChild("pickupInput")
+    public pickupInputElementRef: ElementRef;
     
      @ViewChild("pickupOutput")
     public pickupOutputElementRef: ElementRef;
@@ -53,21 +56,22 @@ export class LocalesComponent implements OnInit {
 
      // this.mapCustomStyles = this.getMapCusotmStyles();
       //create search FormControl
-     // this.destinationInput = new FormControl();
+      this.destinationInput = new FormControl();
       this.destinationOutput = new FormControl();
       //set current position
       this.setCurrentPosition();
       
-
-
       //load Places Autocomplete
       this.mapsAPILoader.load().then(() => {
-       
+          let autocompleteInput = new google.maps.places.Autocomplete(this.pickupInputElementRef.nativeElement, {
+            types: ["address"]
+          });
+
           let autocompleteOutput = new google.maps.places.Autocomplete(this.pickupOutputElementRef.nativeElement, {
             types: ["address"]
           });
         
-       //          this.setupPlaceChangedListener(autocompleteInput, 'ORG');
+                 this.setupPlaceChangedListener(autocompleteInput, 'ORG');
                 this.setupPlaceChangedListener(autocompleteOutput, 'DES');
       });
     }
@@ -82,30 +86,21 @@ export class LocalesComponent implements OnInit {
                 return;
               }
               if (mode === 'ORG') {
-                  console.log("LONGI",this.longitude)
-                  
+                  this.vc.origin = { longitude: place.geometry.location.lng(), latitude: place.geometry.location.lat() }; 
+                  this.vc.originPlaceId = place.place_id;
               } else {
-                this.vc.origin = { longitude: this.longitude, latitude: -50 };
-                console.info(this.vc.origin) ;
-                console.info("originPlaceId",this.vc.originPlaceId) ;
-                  this.vc.originPlaceId = 'Ej1Bdi4gQmFydG9sb23DqSBNaXRyZSA1MTAsIEF2ZWxsYW5lZGEsIEJ1ZW5vcyBBaXJlcywgQXJnZW50aW5h';
-                  // ChIJKwW9MFIzo5URMQqp7hgqY50
-                  console.info(this.vc.origin); 
                   this.vc.destination = { longitude: place.geometry.location.lng(), latitude: place.geometry.location.lat() }; // its a example aleatory position
-                  this.vc.destinationPlaceId = place.place_id; //ACA FALLA
+                  this.vc.destinationPlaceId = place.place_id;
               }
   
               if(this.vc.directionsDisplay === undefined){ this.mapsAPILoader.load().then(() => { 
                     this.vc.directionsDisplay = new google.maps.DirectionsRenderer;
                   }); 
             }
-          console.info(this.vc.origin); 
-          console.info("originPlaceId",this.vc.originPlaceId) ;
+          
               //Update the directions
               this.vc.updateDirections();
               this.zoom = 12;
-              console.info(this.vc.origin); 
-              console.info("originPlaceId",this.vc.originPlaceId) ;
             });
 
          });
@@ -137,7 +132,6 @@ export class LocalesComponent implements OnInit {
           this.latitude = position.coords.latitude;
           this.longitude = position.coords.longitude;
           this.zoom = 12;
-          console.log("LONGIss",this.longitude);
         });
       }
     }
@@ -145,25 +139,5 @@ export class LocalesComponent implements OnInit {
     private getMapCusotmStyles() {
       // Write your Google Map Custom Style Code Here.
     }
-
-    prontopizza()
-  {
-    
-  }
-
-  lareypizzas()
-  {
-
-  }
-
-  lavitola()
-  {
-
-  }
-
-  solera()
-  {
-
-  }
 
 }

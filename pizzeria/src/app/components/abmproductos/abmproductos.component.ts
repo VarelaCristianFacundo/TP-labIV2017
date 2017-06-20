@@ -3,6 +3,7 @@ import { Ng2SmartTableModule } from 'ng2-smart-table';
 import { LocalDataSource } from 'ng2-smart-table';
 import { Router } from '@angular/router';
 import { WsService } from '../../services/ws/ws.service';
+import { Angular2Csv } from 'angular2-csv/Angular2-csv';
 
 @Component({
   selector: 'app-abmproductos',
@@ -11,7 +12,8 @@ import { WsService } from '../../services/ws/ws.service';
 })
 export class AbmproductosComponent implements OnInit {
 
-source: LocalDataSource = new LocalDataSource();
+    public datos: any;
+    source: LocalDataSource = new LocalDataSource();
 
   settings = {
     add: {
@@ -66,6 +68,7 @@ source: LocalDataSource = new LocalDataSource();
     .then(data => {
       console.log(data);
       this.source.load(data);
+      this.datos = data;
   	})
   }
 
@@ -113,9 +116,15 @@ source: LocalDataSource = new LocalDataSource();
       console.log("Borrar: ", data);
       e.confirm.resolve();
     })
+}
+
+   exportar()
+   {
+     new Angular2Csv(this.datos,"Productos");
+   }
 
 
-  }
+  
 
   salir()
   {

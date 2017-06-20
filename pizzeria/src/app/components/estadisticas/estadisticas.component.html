@@ -1,3 +1,37 @@
-<p>
-  estadisticas works!
-</p>
+ <nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="/administrador">Home</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li><a routerLink="/abmusuarios" routerLinkActive="active">ABM Usuarios</a></li>
+      <li><a routerLink="/abmlocales" routerLinkActive="active">ABM Locales</a></li>
+      <li><a routerLink="/estadisticas" routerLinkActive="active">Estadísticas</a></li>
+      <li><a style="margin-left: 21cm;" [routerLink]="[]" (click)="salir()" routerLinkActive="active">Logout</a></li>
+    </ul>
+  </div>
+</nav>
+
+<body class="container contenedor">
+  <div class="col-md-6">
+    <canvas baseChart
+                [data]="lineChartData"
+                [labels]="lineChartLabels"
+                [options]="lineChartOptions"
+                [chartType]="lineChartType"
+                (chartHover)="chartHovered($event)"
+                (chartClick)="chartClicked($event)"></canvas>
+  </div>
+  <div class="col-md-6">
+    <canvas baseChart
+                [data]="pieChartData"
+                [labels]="pieChartLabels"
+                [options]="pieChartOptions"
+                [chartType]="pieChartType"
+                (chartHover)="chartHovered($event)"
+                (chartClick)="chartClicked($event)"></canvas>
+  </div>
+  <div class="col-md-12 text-center" style="margin-top: 10px;height: 50%">
+    <button (click)="randomizeType()" style="display: inline-block">Toggle</button>
+  </div>
+ </body>

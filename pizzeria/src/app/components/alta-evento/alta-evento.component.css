@@ -3,3 +3,10 @@
   background-color: orange;
   background-size: cover;
 }
+
+
+.contenedor{
+	background-color: #195bd6;
+	padding: 30px;
+	border-radius: 10px;
+}

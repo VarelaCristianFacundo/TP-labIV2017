@@ -63,7 +63,7 @@ export class LoginComponent implements OnInit {
       //Recupero el perfil del token
       if(this.auth.getToken().perfil == "Cliente")
       {
-        this.router.navigateByUrl("/pagina1");
+        this.router.navigateByUrl("/cliente");
       }
       if(this.auth.getToken().perfil == "Administrador")
       {

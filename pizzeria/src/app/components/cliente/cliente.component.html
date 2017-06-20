@@ -1,0 +1,56 @@
+<app-menu></app-menu>
+<div class="container contenedor">
+    <br>
+    <div class="row container">
+        <div (click) = "altaPedido()" class="col-md-3">
+            <div class="panel panel-info" style="cursor: pointer;">
+				<div class="panel-heading">
+				    <h4 class="">PEDIDO</h4>
+				</div>
+				<div class="panel-body">
+				    Realice su pedido en el local que desee.
+					<hr>
+				    <img src="../../assets/img/pedido.jpg" alt="" class="img-rounded img-responsive">
+				</div>
+				<!-- <div class="panel-footer">Panel footer</div> -->
+			</div>
+        </div>
+        <div (click) = "altaReserva()" class="col-md-3">
+            <div class="panel panel-info" style="cursor: pointer;">
+                <div class="panel-heading">
+                    <h4 class="">RESERVA</h4>
+                </div>
+                <div class="panel-body">
+					Solicite su reserva de mesa en cualquiera de nuestros locales.
+					<br><hr>
+					<img src="../../assets/img/reserva.jpg" alt="" class="img-rounded img-responsive">
+                </div>
+            </div>
+        </div>
+        <div (click) = "altaEvento()" class="col-md-3">
+            <div class="panel panel-info" style="cursor: pointer;">
+                <div class="panel-heading">
+                    <h4 class="">EVENTO</h4>
+                </div>
+                <div class="panel-body">
+                	Realice una compra con todo lo necesario para su fiesta con 48hs de anticipación.
+                	<br><hr>
+                	<img src="../../assets/img/evento.jpg">
+                </div>
+            </div>
+        </div>
+        <div (click) = "locales()" class="col-md-3">
+            <div class="panel panel-info" style="cursor: pointer;">
+                <div class="panel-heading">
+                    <h4 class="">Nuestros Locales</h4>
+                </div>
+                <div class="panel-body">
+                    Verifique la distancia hacia nuestros locales.
+                    <hr>
+                    <img src="../../assets/img/locales.jpg" alt="" class="img-rounded img-responsive">
+                </div>
+                <!-- <div class="panel-footer">Panel footer</div> -->
+            </div>
+        </div>
+    </div>
+</div>

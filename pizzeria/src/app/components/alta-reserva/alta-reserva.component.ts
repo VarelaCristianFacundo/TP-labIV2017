@@ -21,9 +21,6 @@ export class Reserva {
   }
 }
 
-
-
-
 @Component({
   selector: 'app-alta-reserva',
   templateUrl: './alta-reserva.component.html',

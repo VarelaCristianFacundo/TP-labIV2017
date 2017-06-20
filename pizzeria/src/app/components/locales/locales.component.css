@@ -1,3 +1,9 @@
 .sebm-google-map-container {
   height: 300px;
 }
+
+.contenedor{
+	background-color: #195bd6;
+	padding: 30px;
+	border-radius: 10px;
+}

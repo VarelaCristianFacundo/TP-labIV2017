@@ -1,7 +1,7 @@
 <app-menu></app-menu>
 <div class="container contenedor">
     <br>
-    <div class="row container">
+    <div class="row container"  style="width: 100%; margin: 0 auto;">
         <div (click) = "solera()" class="col-md-3">
             <div class="panel panel-info" style="cursor: pointer;">
         <div class="panel-heading">
@@ -53,11 +53,9 @@
                 <!-- <div class="panel-footer">Panel footer</div> -->
             </div>
         </div>
-    </div>
-</div>
-
+        <div class="container" style="width: 100%; margin: 0 auto;">
       <div class="form-group">
-        
+        <input placeholder="Enter source location" autocorrect="off" autocapitalize="off" spellcheck="off" type="text" class="form-control" #pickupInput [formControl]="destinationInput">
         <input placeholder="Enter destination" autocorrect="off" autocapitalize="off" spellcheck="off" type="text" class="form-control" #pickupOutput [formControl]="destinationOutput" >
       </div>
        <sebm-google-map [latitude]="latitude" [longitude]="longitude" [scrollwheel]="false" [zoom]="zoom"  >
@@ -73,3 +71,8 @@
 
                 </sebm-google-map-directions>
               </sebm-google-map>
+    </div>
+    </div>
+</div>
+
+    

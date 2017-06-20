@@ -7,10 +7,10 @@ import { RouterModule, Routes } from '@angular/router';
 import { Ng2SmartTableModule } from 'ng2-smart-table';
 import { NguiMapModule} from '@ngui/map';
 import { DataTableModule } from "ng2-data-table";
+import { ChartsModule } from 'ng2-charts';
 
 import { AppComponent } from './app.component';
 import { MenuComponent } from './components/menu/menu.component';
-import { Pagina1Component } from './components/pagina1/pagina1.component';
 import { Pagina2Component } from './components/pagina2/pagina2.component';
 import { ErrorComponent } from './components/error/error.component';
 import { LoginComponent } from './components/login/login.component';
@@ -37,15 +37,19 @@ import { AbmproductosComponent } from './components/abmproductos/abmproductos.co
 import { AltaclienteComponent } from './components/altacliente/altacliente.component';
 import { AltapedidosComponent } from './components/altapedidos/altapedidos.component';
 import { AltaproductosComponent } from './components/altaproductos/altaproductos.component';
+import { ClienteComponent } from './components/cliente/cliente.component';
+import { RegistroComponent } from './components/registro/registro.component';
 
 
 const appRoutes: Routes = [
   {
-    path: 'pagina1',
+    path: 'cliente',
     canActivate: [VerificarJWTService],
-    component: Pagina1Component
+    component: ClienteComponent
   },
+  
   { path: 'pagina2', component: Pagina2Component },
+  { path: 'registro', component: RegistroComponent },
   { path: 'alta-reserva', component: AltaReservaComponent },
   { path: 'alta-evento', component: AltaEventoComponent },
   { path: 'alta-pedido', component: AltaPedidoComponent },
@@ -72,7 +76,6 @@ const appRoutes: Routes = [
   declarations: [
     AppComponent,
     MenuComponent,
-    Pagina1Component,
     Pagina2Component,
     ErrorComponent,
     LoginComponent,
@@ -92,11 +95,14 @@ const appRoutes: Routes = [
     AbmproductosComponent,
     AltaclienteComponent,
     AltapedidosComponent,
-    AltaproductosComponent
+    AltaproductosComponent,
+    ClienteComponent,
+    RegistroComponent
   ],
   imports: [
     BrowserModule,
     Ng2SmartTableModule,
+    ChartsModule,
     CommonModule,
     FormsModule,
     DataTableModule,
