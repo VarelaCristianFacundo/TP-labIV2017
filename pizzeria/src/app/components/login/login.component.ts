@@ -34,11 +34,12 @@ export class LoginComponent implements OnInit {
   // public password:AbstractControl;
   // public submitted:boolean = false;
   user: User = new User('','');
+  private auth: AutService;
 
-  constructor( private router: Router, private ws: WsService, private auth: AutService) {
+  constructor( private router: Router, private ws: WsService) {
     this.user.email = '';
-    // console.log(this.user);
-
+    //console.log(this.user);
+    
   }
 
   ngOnInit() {
@@ -53,6 +54,8 @@ export class LoginComponent implements OnInit {
       if ( data.token )
       {
         localStorage.setItem('token', data.token);
+        console.log (localStorage.getItem('token'));
+        this.auth = new AutService(this.router);
         var perfil = this.auth.getToken().perfil;
         console.log (perfil);
        // console.info ("AVER", data);

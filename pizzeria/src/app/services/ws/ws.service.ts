@@ -31,6 +31,18 @@ export class WsService {
       .catch( this.handleError );
   }
 
+  crearEvento ( evento )
+  {
+    let headers = new Headers({ 'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8' });
+    let options = new RequestOptions( {method: RequestMethod.Post, headers: headers });
+
+    return this.http
+      .post(this.url+"altaEvento", evento, options)
+      .toPromise()
+      .then( this.extractData )
+      .catch( this.handleError );
+  }
+
  crearPedido ( pedidos )
   {
     let headers = new Headers({ 'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8' });

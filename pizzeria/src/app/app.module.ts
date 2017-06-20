@@ -34,6 +34,9 @@ import { EmpleadoComponent } from './components/empleado/empleado.component';
 import { AbmempleadosComponent } from './components/abmempleados/abmempleados.component';
 import { AbmpedidosComponent } from './components/abmpedidos/abmpedidos.component';
 import { AbmproductosComponent } from './components/abmproductos/abmproductos.component';
+import { AltaclienteComponent } from './components/altacliente/altacliente.component';
+import { AltapedidosComponent } from './components/altapedidos/altapedidos.component';
+import { AltaproductosComponent } from './components/altaproductos/altaproductos.component';
 
 
 const appRoutes: Routes = [
@@ -57,6 +60,9 @@ const appRoutes: Routes = [
   { path: 'abmpedidos', component: AbmpedidosComponent },
   { path: 'abmempleados', component: AbmempleadosComponent },
   { path: 'abmproductos', component: AbmproductosComponent },
+  { path: 'altacliente', component: AltaclienteComponent },
+  { path: 'altapedidos', component: AltapedidosComponent },
+  { path: 'altaproductos', component: AltaproductosComponent },
   { path: '',   redirectTo: '/login', pathMatch: 'full' },
   { path: '**', component: ErrorComponent }
 ];
@@ -83,7 +89,10 @@ const appRoutes: Routes = [
     EmpleadoComponent,
     AbmempleadosComponent,
     AbmpedidosComponent,
-    AbmproductosComponent
+    AbmproductosComponent,
+    AltaclienteComponent,
+    AltapedidosComponent,
+    AltaproductosComponent
   ],
   imports: [
     BrowserModule,

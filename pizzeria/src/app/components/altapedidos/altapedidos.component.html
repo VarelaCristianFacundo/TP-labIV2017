@@ -1,0 +1,95 @@
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="/empleado">Home</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li><a routerLink="/altacliente" routerLinkActive="active">Alta de Clientes</a></li>
+      <li><a routerLink="/altapedidos" routerLinkActive="active">Alta de Pedidos</a></li>
+      <li><a routerLink="/altaproductos" routerLinkActive="active">Alta de Productos</a></li>
+      <li><a style="margin-left: 21cm;" [routerLink]="[]" (click)="salir()" routerLinkActive="active">Logout</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="container contenedor">
+<table class="row container" [mfData]="datos" #mf="mfDataTable" [mfRowsOnPage]="5" (mfSelectedEntities)="setSelectedEntities($event)">
+    <thead class="panel panel-info">
+        <tr>
+            <th>
+                <mfRowSelectorHead></mfRowSelectorHead>
+            </th>
+            <th style="width: 20%">
+                <mfDefaultSorter by="name">Descripcíón</mfDefaultSorter>
+            </th>
+            <th style="width: 20%">
+                <mfDefaultSorter by="precio">Precio</mfDefaultSorter>
+            </th>
+            <th style="width: 40%">
+                <mfDefaultSorter by="cantidad">City</mfDefaultSorter>
+            </th>
+        </tr>
+    </thead>
+    <tbody class="panel panel-body">
+        <tr *ngFor="let item of mf.data; let ndx = index">
+            <td><mfRowSelector [entity]="item" [checkboxId]="ndx"></mfRowSelector></td>
+            <td>{{item.descripcion}}</td>
+            <td>${{item.precio}}</td>
+            <td><input type="number" [(ngModel)]="item.cantidad"></td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <td colspan="4">
+                <mfBootstrapPaginator [rowsOnPageSet]="[5,10,25]"></mfBootstrapPaginator>
+            </td>
+        </tr>
+    </tfoot>
+</table>
+    <div class="row container">
+        <div (click) = "solera()" class="col-md-3">
+            <div class="panel panel-info" style="cursor: pointer;">
+        <div class="panel-heading">
+            <h4 class="">Pizzería Solera</h4>
+        </div>
+        <div class="panel-body">
+            <img src="../../assets/img/Pizzerias/Solera.jpg" alt="" class="img-rounded img-responsive">
+        </div>
+        <!-- <div class="panel-footer">Panel footer</div> -->
+      </div>
+        </div>
+        <div (click) = "lavitola()" class="col-md-3">
+            <div class="panel panel-info" style="cursor: pointer;">
+                <div class="panel-heading">
+                    <h4 class="">Pizzería La Vitola</h4>
+                </div>
+                <div class="panel-body">
+          <img src="../../assets/img/Pizzerias/LaVitola.jpg" alt="" class="img-rounded img-responsive">
+                </div>
+            </div>
+        </div>
+        <div (click) = "prontopizza()" class="col-md-3">
+            <div class="panel panel-info" style="cursor: pointer;">
+                <div class="panel-heading">
+                    <h4 class="">Pizzería Pronto Pizza</h4>
+                </div>
+                <div class="panel-body">
+                    <img src="../../assets/img/Pizzerias/ProntoPizza.jpg" alt="" class="img-rounded img-responsive">
+                </div>
+                <!-- <div class="panel-footer">Panel footer</div> -->
+            </div>
+        </div>
+        <div (click) = "lareypizzas()" class="col-md-3">
+            <div class="panel panel-info" style="cursor: pointer;">
+                <div class="panel-heading">
+                    <h4 class="">Pizzería La Rey Pizzas</h4>
+                </div>
+                <div class="panel-body">
+                    <img src="../../assets/img/Pizzerias/LaRey.jpg" alt="" class="img-rounded img-responsive">
+                </div>
+                <!-- <div class="panel-footer">Panel footer</div> -->
+            </div>
+        </div>
+    </div>
+    <a align="left" target="_blank" type="button" (click)="Enviar()" class="btn btn-success btn-lg btn-block login-button">Comprar</a>
+</div>

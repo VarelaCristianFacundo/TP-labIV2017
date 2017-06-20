@@ -1,16 +1,17 @@
 <nav class="navbar navbar-default">
   <div class="container-fluid">
     <div class="navbar-header">
-      <a class="navbar-brand" href="/encargado">Home</a>
+      <a class="navbar-brand" href="/empleado">Home</a>
     </div>
     <ul class="nav navbar-nav">
-      <li><a routerLink="/abmempleados" routerLinkActive="active">Empleados</a></li>
-      <li><a routerLink="/abmpedidos" routerLinkActive="active">ABM Pedidos</a></li>
-      <li><a routerLink="/abmproductos" routerLinkActive="active">ABM Productos</a></li>
+      <li><a routerLink="/altacliente" routerLinkActive="active">Alta de Clientes</a></li>
+      <li><a routerLink="/altapedidos" routerLinkActive="active">Alta de Pedidos</a></li>
+      <li><a routerLink="/altaproductos" routerLinkActive="active">Alta de Productos</a></li>
       <li><a style="margin-left: 21cm;" [routerLink]="[]" (click)="salir()" routerLinkActive="active">Logout</a></li>
     </ul>
   </div>
 </nav>
+
 
 <!DOCTYPE html>
 <html>
@@ -30,3 +31,8 @@
     (delete)='borrar($event)'
   ></ng2-smart-table>
 </body>
+
+
+
+</html>
+

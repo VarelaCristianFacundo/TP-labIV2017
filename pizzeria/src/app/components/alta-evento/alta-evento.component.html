@@ -1,3 +1,49 @@
-<p>
-  alta-evento works!
-</p>
+<app-menu></app-menu>
+
+
+<div class="container contenedor">
+<table class="row container" [mfData]="datos" #mf="mfDataTable" [mfRowsOnPage]="5" (mfSelectedEntities)="setSelectedEntities($event)">
+    <thead class="panel panel-info">
+        <tr>
+            <th>
+                <mfRowSelectorHead></mfRowSelectorHead>
+            </th>
+            <th style="width: 20%">
+                <mfDefaultSorter by="name">Descripcíón</mfDefaultSorter>
+            </th>
+            <th style="width: 20%">
+                <mfDefaultSorter by="precio">Precio</mfDefaultSorter>
+            </th>
+            <th style="width: 40%">
+                <mfDefaultSorter by="cantidad">Cantidad</mfDefaultSorter>
+            </th>
+        </tr>
+    </thead>
+    <tbody class="panel panel-body">
+        <tr *ngFor="let item of mf.data; let ndx = index">
+            <td><mfRowSelector [entity]="item" [checkboxId]="ndx"></mfRowSelector></td>
+            <td>{{item.descripcion}}</td>
+            <td>${{item.precio}}</td>
+            <td><input type="number" [(ngModel)]="item.cantidad"></td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <td colspan="4">
+                <mfBootstrapPaginator [rowsOnPageSet]="[5,10,25]"></mfBootstrapPaginator>
+            </td>
+        </tr>
+    </tfoot>
+</table>
+<div class="form-group">
+                            <label for="name" class="cols-sm-2 control-label">Fecha</label>
+                            <div class="cols-sm-10">
+                                <div class="input-group">
+                                    <span class="input-group-addon"><i class="fa fa-calendar fa" aria-hidden="true"></i></span>
+                                    <input type="date" [(ngModel)]="evento.fecha" class="form-control" name="nombre" id="nombre"/>
+                                    <input type="time" [(ngModel)]="evento.hora" class="form-control" name="apellido" id="apellido"/>
+                                </div>
+                            </div>
+                        </div>
+    <a align="left" target="_blank" type="button" (click)="Enviar()" class="btn btn-success btn-lg btn-block login-button">Comprar</a>
+</div>

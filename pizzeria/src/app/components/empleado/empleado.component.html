@@ -1,3 +1,56 @@
-<p>
-  empleado works!
-</p>
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="/empleado">Home</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li><a routerLink="/altacliente" routerLinkActive="active">Alta de Clientes</a></li>
+      <li><a routerLink="/alta-pedido" routerLinkActive="active">Alta de Pedidos</a></li>
+      <li><a routerLink="/altaproductos" routerLinkActive="active">Alta de Productos</a></li>
+      <li><a style="margin-left: 21cm;" [routerLink]="[]" (click)="salir()" routerLinkActive="active">Logout</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="container contenedor">
+    <br>
+    <div class="row container">
+        <div (click) = "altaCliente()" class="col-md-4">
+            <div class="panel panel-info" style="cursor: pointer;">
+				<div class="panel-heading">
+				    <h4 class="">Clientes.</h4>
+				</div>
+				<div class="panel-body">
+				    Alta de Clientes.
+					<hr>
+				    <img src="../../assets/img/abmusuarios.jpg" alt="" class="img-rounded img-responsive">
+				</div>
+				<!-- <div class="panel-footer">Panel footer</div> -->
+			</div>
+        </div>
+        <div (click) = "altaPedidos()" class="col-md-4">
+            <div class="panel panel-info" style="cursor: pointer;">
+                <div class="panel-heading">
+                    <h4 class="">Pedidos</h4>
+                </div>
+                <div class="panel-body">
+					Alta de Pedidos
+					<br><hr>
+					<img src="../../assets/img/abmpedidos.jpg" alt="" class="img-rounded img-responsive">
+                </div>
+            </div>
+        </div>
+        <div (click) = "altaProductos()" class="col-md-4">
+            <div class="panel panel-info" style="cursor: pointer;">
+                <div class="panel-heading">
+                    <h4 class="">Productos</h4>
+                </div>
+                <div class="panel-body">
+					Alta de productos.
+					<br><hr>
+					<img src="../../assets/img/abmproductos.jpg" alt="" class="img-rounded img-responsive">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
