@@ -55,7 +55,7 @@ export class AltaReservaComponent implements OnInit {
 
   volver()
   {
-  	    this.router.navigateByUrl("/pagina1");
+  	    this.router.navigateByUrl("/cliente");
   }
 
     xwwwfurlenc(srcjson){

@@ -90,7 +90,7 @@ export class LoginComponent implements OnInit {
   
   registrar()
   {
-        this.router.navigateByUrl("/pagina2");
+        this.router.navigateByUrl("/registro");
   }
 
   administrador ()

@@ -11,7 +11,6 @@ import { ChartsModule } from 'ng2-charts';
 
 import { AppComponent } from './app.component';
 import { MenuComponent } from './components/menu/menu.component';
-import { Pagina2Component } from './components/pagina2/pagina2.component';
 import { ErrorComponent } from './components/error/error.component';
 import { LoginComponent } from './components/login/login.component';
 import { WsService }  from './services/ws/ws.service';
@@ -42,14 +41,12 @@ import { RegistroComponent } from './components/registro/registro.component';
 
 
 const appRoutes: Routes = [
+  { path: 'registro', component: RegistroComponent },
   {
     path: 'cliente',
     canActivate: [VerificarJWTService],
     component: ClienteComponent
   },
-  
-  { path: 'pagina2', component: Pagina2Component },
-  { path: 'registro', component: RegistroComponent },
   { path: 'alta-reserva', component: AltaReservaComponent },
   { path: 'alta-evento', component: AltaEventoComponent },
   { path: 'alta-pedido', component: AltaPedidoComponent },
@@ -76,7 +73,6 @@ const appRoutes: Routes = [
   declarations: [
     AppComponent,
     MenuComponent,
-    Pagina2Component,
     ErrorComponent,
     LoginComponent,
     DirectionsMapDirective,

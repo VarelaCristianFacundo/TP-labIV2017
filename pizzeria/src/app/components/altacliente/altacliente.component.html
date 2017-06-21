@@ -1,7 +1,7 @@
 <nav class="navbar navbar-default">
   <div class="container-fluid">
     <div class="navbar-header">
-      <a class="navbar-brand" href="/empleado">Home</a>
+      <a class="navbar-brand" href="/empleado">Inicio</a>
     </div>
     <ul class="nav navbar-nav">
       <li><a routerLink="/altacliente" routerLinkActive="active">Alta de Clientes</a></li>
@@ -18,7 +18,7 @@
 <head>
 	<title></title>
 </head>
-<body id="fondoSmart">
+<body class="container" style="border-radius: 10px; background-color: #e5e3e3 ">
   {{title}}
   <ng2-smart-table 
     [settings]="settings"
@@ -31,8 +31,7 @@
     (delete)='borrar($event)'
   ></ng2-smart-table>
 </body>
-
-
-
 </html>
+<br><br>
+<a class="btn btn-primary" (click)='exportar()'> Exportar Grilla</a>
 

@@ -3,6 +3,7 @@ import { Ng2SmartTableModule } from 'ng2-smart-table';
 import { LocalDataSource } from 'ng2-smart-table';
 import { Router } from '@angular/router';
 import { WsService } from '../../services/ws/ws.service';
+import { Angular2Csv } from 'angular2-csv/Angular2-csv';
 
 @Component({
   selector: 'app-abmusuarios',
@@ -11,6 +12,7 @@ import { WsService } from '../../services/ws/ws.service';
 })
 export class AbmusuariosComponent implements OnInit {
 
+  public datos: any;
 	source: LocalDataSource = new LocalDataSource();
 
   settings = {
@@ -74,6 +76,7 @@ export class AbmusuariosComponent implements OnInit {
     .then(data => {
       console.log(data);
       this.source.load(data);
+      this.datos = data;   
     })
   }
 
@@ -95,6 +98,11 @@ export class AbmusuariosComponent implements OnInit {
   	this.router.navigateByUrl("/estadisticas");
   }
 
+  
+  exportar()
+   {
+     new Angular2Csv(this.datos,"Usuario");
+   }
 
   editar ( e )
   {
