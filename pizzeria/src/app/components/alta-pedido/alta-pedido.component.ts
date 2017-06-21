@@ -76,27 +76,27 @@ public Enviar(){
   ngOnInit() {
   }
 
-  solera()
+  centenario()
   {
-    alert ("Pizzería Solera");
+    alert ("Elegiste la dirección Av. Centenario 512");
     this.pizzeria =1;
   }
   
-  lavitola()
+  alvear()
   {
-    alert ("Pizzería Vitola Elegida");
+    alert ("Elegiste la dirección Alvear 2894");
     this.pizzeria =2;
   }
 
-  prontopizza()
+  rivadavia()
   {
-    alert ("Pizzería Pronto Pizza");
+    alert ("Elegiste la dirección Av. Rivadavia 11704");
     this.pizzeria =3;
   }
 
-  lareypizzas()
+  galicia()
   {
-    alert ("Pizzería La Rey Pizzas");
+    alert ("Elegiste la dirección Av. Galicia 597");
     this.pizzeria =4;
   }
 

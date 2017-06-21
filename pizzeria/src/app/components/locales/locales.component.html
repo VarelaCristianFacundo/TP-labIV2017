@@ -2,12 +2,12 @@
 <div class="container contenedor">
     <br>
     <div class="row container"  style="width: 100%; margin: 0 auto;">
-        <div (click) = "solera()" class="col-md-3">
+        <div (click) = "centenario()" class="col-md-3">
             <div class="panel panel-info" style="cursor: pointer;">
         <div class="panel-heading">
-            <h4 class="">Pizzería Solera</h4>
+            <h4 class="">Av. Centenario 512</h4>
         </div>
-        <div class="panel-body">
+        <div class="panel-body seleccion">
             Realice su pedido en el local que desee.
           <hr>
             <img src="../../assets/img/Pizzerias/Solera.jpg" alt="" class="img-rounded img-responsive">
@@ -15,24 +15,24 @@
         <!-- <div class="panel-footer">Panel footer</div> -->
       </div>
         </div>
-        <div (click) = "lavitola()" class="col-md-3">
+        <div (click) = "alvear()" class="col-md-3">
             <div class="panel panel-info" style="cursor: pointer;">
                 <div class="panel-heading">
-                    <h4 class="">Pizzería La Vitola</h4>
+                    <h4 class="">Alvear 2894</h4>
                 </div>
-                <div class="panel-body">
+                <div class="panel-body seleccion">
           Solicite su reserva de mesa en cualquiera de nuestros locales.
           <br><hr>
           <img src="../../assets/img/Pizzerias/LaVitola.jpg" alt="" class="img-rounded img-responsive">
                 </div>
             </div>
         </div>
-        <div (click) = "prontopizza()" class="col-md-3">
+        <div (click) = "rivadavia()" class="col-md-3">
             <div class="panel panel-info" style="cursor: pointer;">
                 <div class="panel-heading">
-                    <h4 class="">Pizzería Pronto Pizza</h4>
+                    <h4 class="">Av. Rivadavia 11704</h4>
                 </div>
-                <div class="panel-body">
+                <div class="panel-body seleccion">
                     Verifique la distancia hacia nuestros locales.
                     <hr>
                     <img src="../../assets/img/Pizzerias/ProntoPizza.jpg" alt="" class="img-rounded img-responsive">
@@ -40,12 +40,12 @@
                 <!-- <div class="panel-footer">Panel footer</div> -->
             </div>
         </div>
-        <div (click) = "lareypizzas()" class="col-md-3">
+        <div (click) = "galicia()" class="col-md-3">
             <div class="panel panel-info" style="cursor: pointer;">
                 <div class="panel-heading">
-                    <h4 class="">Pizzería La Rey Pizzas</h4>
+                    <h4 class="">Av. Galicia 597</h4>
                 </div>
-                <div class="panel-body">
+                <div class="panel-body seleccion">
                     Verifique la distancia hacia nuestros locales.
                     <hr>
                     <img src="../../assets/img/Pizzerias/LaRey.jpg" alt="" class="img-rounded img-responsive">
@@ -55,7 +55,7 @@
         </div>
         <div class="container" style="width: 100%; margin: 0 auto;">
       <div class="form-group">
-        <input placeholder="Enter source location" autocorrect="off" autocapitalize="off" spellcheck="off" type="text" class="form-control" #pickupInput [formControl]="destinationInput">
+        <input placeholder="Enter source location" autocorrect="off" autocapitalize="off" spellcheck="off" type="text" [(ngModel)]="locacion" class="form-control" #pickupInput [formControl]="destinationInput">
         <input placeholder="Enter destination" autocorrect="off" autocapitalize="off" spellcheck="off" type="text" class="form-control" #pickupOutput [formControl]="destinationOutput" >
       </div>
        <sebm-google-map [latitude]="latitude" [longitude]="longitude" [scrollwheel]="false" [zoom]="zoom"  >

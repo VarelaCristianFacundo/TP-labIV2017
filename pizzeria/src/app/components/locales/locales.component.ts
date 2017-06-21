@@ -24,7 +24,7 @@ export class LocalesComponent implements OnInit {
     public mapCustomStyles : any;
     public estimatedTime: any;
     public estimatedDistance: any;
-
+    public locacion: any;
 
     @ViewChild("pickupInput")
     public pickupInputElementRef: ElementRef;
@@ -138,6 +138,11 @@ export class LocalesComponent implements OnInit {
 
     private getMapCusotmStyles() {
       // Write your Google Map Custom Style Code Here.
+    }
+
+    centenario()
+    {
+
     }
 
 }

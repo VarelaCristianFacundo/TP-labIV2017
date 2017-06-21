@@ -19,19 +19,21 @@ export class EstadisticasComponent implements OnInit {
   public lineChartOptions: any = {
     title: {
         display: true,
-        text: 'Compras por Cliente en peso'
+        text: 'Compras por Cliente expresado en $',
+        fontSize: 16
     }
   };
   public pieChartOptions: any = {
     title: {
         display: true,
-        text: 'Valores en peso',
+        text: 'Ventas de Locales expresado en $',
         fontSize: 16
     }
   };
   public pieChartType:string = 'doughnut';
   public datos:any;
   public loc:any;
+  public users:any;
   public info:Array<any> = [];
   public infobar:Array<any> = [];
   public puntoventa:Array<any> = [];
@@ -43,6 +45,7 @@ export class EstadisticasComponent implements OnInit {
   ws.traerDatosUsuarios()
   .then(data => {
   	console.log(data);
+    this.users = data;
   })
 
 

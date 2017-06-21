@@ -6,12 +6,12 @@
 
 
 .contenedor{
-	background-color: #195bd6;
+	background-color: #FFDEAD;
 	padding: 30px;
 	border-radius: 10px;
 }
 
 .seleccion:hover{
-	background-color: #053184 !important;
+	background-color: #D2691E !important;
 
 }

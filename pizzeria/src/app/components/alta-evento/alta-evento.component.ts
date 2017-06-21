@@ -8,13 +8,17 @@ export class Evento {
   public fecha: string;
   public hora: string;
   public precio: number;
+  public cantidad: number;
+  public id_local: number;
 
-  constructor(id_usuario:number, fecha:string, hora:string,  precio: number)
+  constructor(id_usuario:number, fecha:string, hora:string,  precio: number, cantidad: number, id_local: number)
   {
     this.id_usuario = id_usuario;
     this.fecha = fecha;
     this.hora = hora;
     this.precio = precio;
+    this.cantidad = cantidad;
+    this.id_local = id_local;
   }
 }
 
@@ -25,7 +29,7 @@ export class Evento {
 })
 export class AltaEventoComponent implements OnInit {
 
-  evento: Evento = new Evento(0,'','',0);
+  evento: Evento = new Evento(0,'','',0,0,0);
   public pizzeria: any;
   private datos: any[];
   private datoslocales: any[];
@@ -38,23 +42,19 @@ export class AltaEventoComponent implements OnInit {
         console.info($event);
     }
 
-  public Enviar(){
-
-
+ public Enviar(){  
   for (var i = this.selectedEntities.length - 1; i >= 0; i--) {
-	    console.info(this.selectedEntities[i]);
-	    	for (var i = 0; i <= parseInt (this.selectedEntities[i].cantidad); i++) {
-	    		this.sumPrecio = this.sumPrecio + parseInt(this.selectedEntities[i].precio);
-  			}	
-  		}
-  		console.info(this.sumPrecio);
-  		var evento = this.xwwwfurlenc({id_usuario: this.auth.getToken().id, 
-	    	fecha: this.evento.fecha + " " + this.evento.hora, precio: this.sumPrecio});
-	    this.ws.crearEvento(evento)
-	    .then(data => {
-	     	 console.log("Alta: ", data);
-	    	})
-	}
+    var evento = this.xwwwfurlenc({id_usuario: this.auth.getToken().id, 
+    fecha: this.evento.fecha + " " + this.evento.hora, precio: this.selectedEntities[i].precio, 
+    cantidad: this.selectedEntities[i].cantidad, id_local: this.evento.id_local});
+    console.info(evento);
+    this.ws.crearEvento(evento)
+    .then(data => {
+      console.log("Alta: ", data);
+    })
+
+  }
+}
 
 
   constructor(private router: Router, private ws: WsService, private auth: AutService) {

@@ -1,4 +1,4 @@
- <nav class="navbar navbar-default">
+ <nav class="navbar navbar-inverse bg-inverse">
   <div class="container-fluid">
     <div class="navbar-header">
       <a class="navbar-brand" href="/administrador">Inicio</a>
@@ -7,13 +7,13 @@
       <li><a routerLink="/abmusuarios" routerLinkActive="active">ABM Usuarios</a></li>
       <li><a routerLink="/abmlocales" routerLinkActive="active">ABM Locales</a></li>
       <li><a routerLink="/estadisticas" routerLinkActive="active">Estadísticas</a></li>
-      <li><a style="margin-left: 21cm;" [routerLink]="[]" (click)="salir()" routerLinkActive="active">Logout</a></li>
+      <li><a style="margin-left: 20cm;" [routerLink]="[]" (click)="salir()" routerLinkActive="active">Logout</a></li>
     </ul>
   </div>
 </nav>
 
 <body class="container contenedor">
-  <div class="col-md-6">
+  <div class="col-md-5">
     <canvas baseChart
                 [data]="lineChartData"
                 [labels]="lineChartLabels"
@@ -22,7 +22,7 @@
                 (chartHover)="chartHovered($event)"
                 (chartClick)="chartClicked($event)"></canvas>
   </div>
-  <div class="col-md-6">
+  <div class="col-md-5">
     <canvas baseChart
                 [data]="pieChartData"
                 [labels]="pieChartLabels"
@@ -31,7 +31,7 @@
                 (chartHover)="chartHovered($event)"
                 (chartClick)="chartClicked($event)"></canvas>
   </div>
-  <div class="col-md-12 text-center" style="margin-top: 10px;height: 50%">
-    <button (click)="randomizeType()" style="display: inline-block">Toggle</button>
+  <div class="col-md-12 text-left" style="margin-top: 10px;height: 50%">
+    <a class="btn btn-info" (click)="randomizeType()" style="display: inline-block">Modificar Estilo</a>
   </div>
  </body>

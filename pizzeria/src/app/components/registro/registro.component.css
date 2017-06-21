@@ -87,17 +87,13 @@ padding: 8px 12px !important;
     background: -ms-linear-gradient(top, #f5f5f5 0%, #eeeeee 100%);
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f5f5f5', endColorstr='#eeeeee', GradientType=0);
 }
-#volver {
-    
-    background: #993333;
-}
 .main-center{
     margin-top: 30px;
     margin: 0 auto;
     max-width: 400px;
     padding: 10px 40px;
-    background:#195bd6;
-        color: #FFF;
+    background:#FFDEAD;
+        color: black;
     text-shadow: none;
     -webkit-box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.31);
 -moz-box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.31);

@@ -36,14 +36,28 @@
     </tfoot>
 </table>
 <div class="form-group">
-                            <label for="name" class="cols-sm-2 control-label">Fecha</label>
-                            <div class="cols-sm-10">
-                                <div class="input-group">
-                                    <span class="input-group-addon"><i class="fa fa-calendar fa" aria-hidden="true"></i></span>
-                                    <input type="date" [(ngModel)]="evento.fecha" class="form-control" name="nombre" id="nombre"/>
-                                    <input type="time" [(ngModel)]="evento.hora" class="form-control" name="apellido" id="apellido"/>
-                                </div>
-                            </div>
-                        </div>
-    <a align="left" target="_blank" type="button" (click)="Enviar()" class="btn btn-success btn-lg btn-block login-button">Comprar</a>
+    <label for="name" class="cols-sm-2 control-label">Fecha</label>
+    <div class="cols-sm-10">
+        <div class="input-group">
+            <span class="input-group-addon"><i class="fa fa-calendar fa" aria-hidden="true"></i></span>
+            <input type="date" [(ngModel)]="evento.fecha" class="form-control" name="nombre" id="nombre"/>
+            <input type="time" [(ngModel)]="evento.hora" class="form-control" name="apellido" id="apellido"/>
+        </div>
+    </div>
+</div>
+<div class="form-group">
+    <label for="password" class="cols-sm-2 control-label">Local  </label>
+    <div class="cols-sm-10">
+        <div class="input-group">
+            <span class="input-group-addon"><i class="fa fa-home fa-lg" aria-hidden="true"></i></span>
+            <select class="form-control" [(ngModel)]="evento.id_local" name="local" required>
+              <option value="1">Av. Centenario 512</option>
+              <option value="2">Alvear 2894</option>
+              <option value="3">Av. Rivadavia 11704</option>
+              <option value="4">Av. Galicia 597</option>
+          </select>
+        </div>
+    </div>
+</div>
+    <a align="left" target="_blank" type="button" (click)="Enviar()" class="btn btn-info btn-lg btn-block login-button">Comprar</a>
 </div>
