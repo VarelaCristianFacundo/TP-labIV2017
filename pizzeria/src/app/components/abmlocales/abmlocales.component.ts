@@ -4,6 +4,7 @@ import { LocalDataSource } from 'ng2-smart-table';
 import { Router } from '@angular/router';
 import { WsService } from '../../services/ws/ws.service';
 import { Angular2Csv } from 'angular2-csv/Angular2-csv';
+declare let jsPDF;
 
 @Component({
   selector: 'app-abmlocales',
@@ -138,6 +139,30 @@ export class AbmlocalesComponent implements OnInit {
    {
      new Angular2Csv(this.datos,"Locales");
    }
+
+  convert(){
+    var col = [];
+    col = Object.keys(this.datos[0]);
+
+    var rows = [];
+    for (var i = this.datos.length - 1; i >= 0; i--) {
+        var temp = [];
+        for(var key in this.datos[i]){
+          temp.push(this.datos[i][key]);
+        }
+        rows.push(temp);
+    }
+
+    console.info("col", col);
+    console.info("rows", rows);
+
+    var doc = new jsPDF({
+      orientation: 'landscape'
+    });
+    doc.autoTable(col, rows);
+    doc.save('Locales.pdf');
+  }
+
 
   salir()
   {
