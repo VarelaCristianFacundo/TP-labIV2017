@@ -80,5 +80,27 @@
             </div>
         </div>
     </div>
-    <a align="left" target="_blank" type="button" (click)="Enviar()" class="btn btn-info btn-lg btn-block login-button">Comprar</a>
+    <a align="left" target="_blank" type="button" (click)="Enviar()" data-toggle="modal" data-target="#myModal" class="btn btn-info btn-lg btn-block login-button">Comprar</a>
 </div>
+
+  <!-- Modal -->
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Gracias por realizar su pedido</h4>
+        </div>
+        <div class="modal-body">
+          <p>El pedido se encuentra en camino.</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+

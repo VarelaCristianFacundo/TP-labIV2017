@@ -8,8 +8,6 @@
             <h4 class="">Av. Centenario 512</h4>
         </div>
         <div class="panel-body seleccion">
-            Realice su pedido en el local que desee.
-          <hr>
             <img src="../../assets/img/Pizzerias/Solera.jpg" alt="" class="img-rounded img-responsive">
         </div>
         <!-- <div class="panel-footer">Panel footer</div> -->
@@ -21,8 +19,6 @@
                     <h4 class="">Alvear 2894</h4>
                 </div>
                 <div class="panel-body seleccion">
-          Solicite su reserva de mesa en cualquiera de nuestros locales.
-          <br><hr>
           <img src="../../assets/img/Pizzerias/LaVitola.jpg" alt="" class="img-rounded img-responsive">
                 </div>
             </div>
@@ -33,8 +29,6 @@
                     <h4 class="">Av. Rivadavia 11704</h4>
                 </div>
                 <div class="panel-body seleccion">
-                    Verifique la distancia hacia nuestros locales.
-                    <hr>
                     <img src="../../assets/img/Pizzerias/ProntoPizza.jpg" alt="" class="img-rounded img-responsive">
                 </div>
                 <!-- <div class="panel-footer">Panel footer</div> -->
@@ -46,8 +40,6 @@
                     <h4 class="">Av. Galicia 597</h4>
                 </div>
                 <div class="panel-body seleccion">
-                    Verifique la distancia hacia nuestros locales.
-                    <hr>
                     <img src="../../assets/img/Pizzerias/LaRey.jpg" alt="" class="img-rounded img-responsive">
                 </div>
                 <!-- <div class="panel-footer">Panel footer</div> -->
@@ -55,8 +47,8 @@
         </div>
         <div class="container" style="width: 100%; margin: 0 auto;">
       <div class="form-group">
-        <input placeholder="Enter source location" autocorrect="off" autocapitalize="off" spellcheck="off" type="text" [(ngModel)]="locacion" class="form-control" #pickupInput [formControl]="destinationInput">
-        <input placeholder="Enter destination" autocorrect="off" autocapitalize="off" spellcheck="off" type="text" class="form-control" #pickupOutput [formControl]="destinationOutput" >
+        <input placeholder="Enter source location" autocorrect="off" autocapitalize="off" spellcheck="off" type="text" class="form-control" #pickupInput [formControl]="destinationInput">
+        <input placeholder="Enter destination" autocorrect="off" autocapitalize="off" spellcheck="off" type="text" [(ngModel)]="locacion" class="form-control" #pickupOutput [formControl]="destinationOutput" >
       </div>
        <sebm-google-map [latitude]="latitude" [longitude]="longitude" [scrollwheel]="false" [zoom]="zoom"  >
                 <!-- <sebm-google-map-marker [latitude]="latitude" [longitude]="longitude" [iconUrl]="iconurl">

@@ -21,21 +21,24 @@
 
  <h1> de no presentar el TP para las fechas anteriores, debe  presentar en fecha de final</h1>
 
+
+API key:
+AIzaSyCBIeNMEOoYQEDL4S5GlKKP9EcUiOCNr3A
+
 Funcionales del sistema:
- - [ ] ABM.
+ - [X] ABM.
  - [X] login (JWT).
  - [X] Botones de test ( Administrador, encargado,empleado y cliente).
- - [ ] WEbServer(API rest).
- - [ ] Geo localización.
- - [ ] Generar documentos Excel.
- - [ ] Generar Documentos pdf .
- - [ ] Generar graficos estadísticos.
- - [ ] Responsive / estilos aplicados de forma estética.
- - [ ] Manejo de imágenes.
- - [ ] Creación de al menos 5 componentes.
- - [ ] POO en TS para todas las entidades(usar herencia)
- - [ ] Servicios
- - [ ] Filtros
+ - [X] WEbServer(API rest).
+ - [X] Geo localización.
+ - [X] Generar documentos Excel.
+ - [X] Generar Documentos pdf .
+ - [X] Generar graficos estadísticos.
+ - [X] Responsive / estilos aplicados de forma estética.
+ - [X] Manejo de imágenes.
+ - [X] Creación de al menos 5 componentes.
+ - [X] POO en TS para todas las entidades(usar herencia)
+ - [X] Servicios
 
 Usuarios:
 

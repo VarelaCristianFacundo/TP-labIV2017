@@ -9,6 +9,7 @@
 		public $id_local;
 	 	public $fecha;
 	 	public $importe;
+	 	public $descripcion;
 	 	public $estado;
 	//--------------------------------------------------------------------------------//
 	//--------------------------------------------------------------------------------//
@@ -20,6 +21,10 @@
 		public function GetIdUsuario()
 		{
 			return $this->id_usuario;
+		}
+		public function GetDescripcion()
+		{
+			return $this->descripcion;
 		}
 		public function GetIdLocal()
 		{
@@ -53,6 +58,10 @@
 		{
 			$this->fecha = $valor;
 		}
+		public function SetDescripcion($valor)
+		{
+			$this->fecha = $descripcion;
+		}
 		public function SetImporte($valor)
 		{
 			$this->importe = $valor;
@@ -73,6 +82,7 @@
 				$this->fecha = $obj->GetFecha();
 				$this->importe = $obj->GetImporte();
 				$this->estado = $obj->GetEstado();
+				$this->estado = $obj->GetDescripcion();
 			}
 		}
 	//--------------------------------------------------------------------------------//

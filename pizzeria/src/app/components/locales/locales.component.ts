@@ -142,7 +142,22 @@ export class LocalesComponent implements OnInit {
 
     centenario()
     {
+      this.locacion = "Av. Centenario 512, San Isidro, Buenos Aires, Argentina";
+    }
 
+    alvear()
+    {
+      this.locacion = "Alvear 2894, Villa Ballester, Buenos Aires, Argentina";      
+    }
+
+    rivadavia()
+    {
+      this.locacion = "Av. Rivadavia 11704, Buenos Aires, Argentina";
+    }
+
+    galicia()
+    {
+       this.locacion = "Av. Galicia 597, Avellaneda, Buenos Aires, Argentina"; 
     }
 
 }
