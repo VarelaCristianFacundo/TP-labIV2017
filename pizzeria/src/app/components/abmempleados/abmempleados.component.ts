@@ -101,7 +101,7 @@ export class AbmempleadosComponent implements OnInit {
     console.log ("Persona", pers);
     //this.datos.crearPersona(pers)
 	var pers = this.xwwwfurlenc({nombre: e.newData.nombre, apellido: e.newData.apellido,
-    email: e.newData.email, sexo: e.newData.sexo, perfil: e.newData.perfil, password: e.newData.clave });
+    email: e.newData.email, sexo: e.newData.sexo, perfil: "Cliente", password: e.newData.password });
 
 
     this.ws.crearUsuario(pers)

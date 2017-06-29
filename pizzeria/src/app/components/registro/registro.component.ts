@@ -43,6 +43,13 @@ export class RegistroComponent implements OnInit {
     //var persona = {id: 4898, nombre:"Facundo", apellido:"Varela", dni:"32184", foto:"341654.jpg"};
     //var pers = this.xwwwfurlenc({nombre: "facu", apellido: "Varela", email: "a@a.a", sexo: "M",
     //perfil: "Administrador", password: "1234"});
+    if (this.user.nombre == "" || this.user.apellido == "" || this.user.email == "" || 
+        this.user.sexo == "" || this.user.perfil == "" || this.user.clave == "")
+    {
+      alert ("Falta algún dato.")
+    }
+    else
+    {
     var pers = this.xwwwfurlenc({nombre: this.user.nombre, apellido: this.user.apellido,
     email: this.user.email, sexo: this.user.sexo, perfil: this.user.perfil, password: this.user.clave });
     this.ws.crearUsuario(pers)
@@ -50,6 +57,10 @@ export class RegistroComponent implements OnInit {
       console.log("Alta: ", data);
  //     e.confirm.resolve();
     })
+    alert ("Gracias por registrarte, ya puedes ingresar como Cliente.");
+    this.router.navigateByUrl("/login");
+    }
+
   }
 
   volver()

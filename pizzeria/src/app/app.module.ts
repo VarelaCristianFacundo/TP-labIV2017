@@ -38,10 +38,15 @@ import { AltapedidosComponent } from './components/altapedidos/altapedidos.compo
 import { AltaproductosComponent } from './components/altaproductos/altaproductos.component';
 import { ClienteComponent } from './components/cliente/cliente.component';
 import { RegistroComponent } from './components/registro/registro.component';
+import { EncuestaComponent } from './components/encuesta/encuesta.component';
+import { MenuadminComponent } from './components/menuadmin/menuadmin.component';
+import { MenuencargadoComponent } from './components/menuencargado/menuencargado.component';
+import { MenuempleadoComponent } from './components/menuempleado/menuempleado.component';
 
 
 const appRoutes: Routes = [
   { path: 'registro', component: RegistroComponent },
+  { path: 'encuesta', component: EncuestaComponent },
   { path: 'cliente',
     canActivate: [VerificarJWTService],
     component: ClienteComponent },
@@ -123,7 +128,11 @@ const appRoutes: Routes = [
     AltapedidosComponent,
     AltaproductosComponent,
     ClienteComponent,
-    RegistroComponent
+    RegistroComponent,
+    EncuestaComponent,
+    MenuadminComponent,
+    MenuencargadoComponent,
+    MenuempleadoComponent
   ],
   imports: [
     BrowserModule,

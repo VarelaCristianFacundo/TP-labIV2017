@@ -42,19 +42,29 @@ export class AltapedidosComponent implements OnInit {
 
 public Enviar(){
 
-  console.info("PRODUCTOS A COMPRAR", this.pizzeria);
-  for (var i = this.selectedEntities.length - 1; i >= 0; i--) {
-    console.info(this.selectedEntities[i].descripcion);
+ if (this.pizzeria == null)
+    {  
+      alert ("No seleccionó algún dato");
+    }
+    else
+    {
+   
+      console.info("PRODUCTOS A COMPRAR", this.pizzeria);
+      for (var i = this.selectedEntities.length - 1; i >= 0; i--) {
+        console.info(this.selectedEntities[i].descripcion);
 
-    var pedidos = this.xwwwfurlenc({id_usuario: this.auth.getToken().id, id_local: this.pizzeria,
-    precio: this.selectedEntities[i].precio, cantidad: this.selectedEntities[i].cantidad, 
-    estado: "Pedido", descripcion: this.selectedEntities[i].descripcion});
-    this.ws.crearPedido(pedidos)
-    .then(data => {
-      console.log("Alta: ", data);
-    })
+        var pedidos = this.xwwwfurlenc({id_usuario: this.auth.getToken().id, id_local: this.pizzeria,
+        precio: this.selectedEntities[i].precio, cantidad: this.selectedEntities[i].cantidad, 
+        estado: "Pedido", descripcion: this.selectedEntities[i].descripcion});
+        this.ws.crearPedido(pedidos)
+        .then(data => {
+          console.log("Alta: ", data);
+        })
+        }
+      alert ("Gracias por su pedido.");
+      this.router.navigateByUrl("/empleado");
 
-  }
+    }
 }
 
   constructor(private router: Router, private ws: WsService, private auth: AutService) { 

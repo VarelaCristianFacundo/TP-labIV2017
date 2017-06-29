@@ -1,0 +1,126 @@
+<div class="container contenedor">
+<!--     <div class="page-header">
+        <center> ENCUESTA DE SATISFACCIÓN </center>     
+    </div> -->
+    <div class="CajaInicio animated bounceInRight">
+        <em>Esta breve encuesta es muy importante para nosotros porque nos permite seguir mejorando la calidad de nuestro servicio. Gracias por completarla!</em>
+        <br><br>
+        <form id="FormIngreso" name="formAlta" enctype="multipart/form-data" novalidate >
+
+            <!-- PREGUNTA #1 -->
+            <div class="form-group">
+                <label for="pregunta1" class="control-label">Pregunta #1:</label>
+                <span>¿Cuán satisfecho quedó con nuestro servicio?</span>
+                <select id="pregunta1" name="pregunta1" class="form-control" 
+                [(ngModel)]="encuesta.pregunta1" required>
+                    <option ng-value="4" selected>Muy satisfecho</option>
+                    <option ng-value="3">Algo satisfecho</option>
+                    <option ng-value="2">Poco satisfecho</option>
+                    <option ng-value="1">Nada satisfecho</option>
+                </select>
+            </div>
+
+            <!-- PREGUNTA #2 -->
+            <div class="form-group">
+                <label for="pregunta2" class="control-label">Pregunta #2:</label>
+                <span>¿Qué le parecieron los precios de los productos?</span>
+                <select id="pregunta2" name="pregunta2" class="form-control" 
+                [(ngModel)]="encuesta.pregunta2" required>
+                    <option value="4" selected>Muy económicos</option>
+                    <option value="3">Económicos</option>
+                    <option value="2">Algo caros</option>
+                    <option value="1">Muy caros</option>
+                </select>
+            </div>
+            <hr style="margin: 5px;">
+            <!-- PREGUNTA #3 -->
+            <div class="form-group">
+                <label class="control-label">Pregunta #3:</label>
+                <span>¿Qué le pareció la calidad de la comida?</span>
+                <br>
+                <label class="radio-inline"><input type="radio" name="pregunta3" value="5" 
+                [(ngModel)]="encuesta.pregunta3" required/>Excelente</label>
+                <label class="radio-inline"><input type="radio" name="pregunta3" value="4" 
+                [(ngModel)]="encuesta.pregunta3"/>Muy buena</label>
+                <label class="radio-inline"><input type="radio" name="pregunta3" value="3" 
+                [(ngModel)]="encuesta.pregunta3"/>Buena</label>
+                <label class="radio-inline"><input type="radio" name="pregunta3" value="2" 
+                [(ngModel)]="encuesta.pregunta3"/>Regular</label>
+                <label class="radio-inline"><input type="radio" name="pregunta3" value="1" 
+                [(ngModel)]="encuesta.pregunta3"/>Mala</label>
+            </div>
+            <hr style="margin: 5px;">
+            <!-- PREGUNTA #4 -->
+            <div class="form-group">
+                <label class="control-label">Pregunta #4:</label>
+                <span>¿Qué le pareció el tiempo de espera del pedido?</span>
+                <br>
+                <label class="radio-inline"><input type="radio" name="pregunta4" value="5" 
+                [(ngModel)]="encuesta.pregunta4" required/>Excelente</label>
+                <label class="radio-inline"><input type="radio" name="pregunta4" value="4" 
+                [(ngModel)]="encuesta.pregunta4"/>Muy buena</label>
+                <label class="radio-inline"><input type="radio" name="pregunta4" value="3" 
+                [(ngModel)]="encuesta.pregunta4"/>Buena</label>
+                <label class="radio-inline"><input type="radio" name="pregunta4" value="2" 
+                [(ngModel)]="encuesta.pregunta4"/>Regular</label>
+                <label class="radio-inline"><input type="radio" name="pregunta4" value="1" 
+                [(ngModel)]="encuesta.pregunta4"/>Mala</label>
+            </div>
+            <hr style="margin: 5px;">
+            <!-- PREGUNTA #5 -->
+            <div class="form-group">
+                <label class="control-label">Pregunta #5:</label>
+                <span>¿Qué le pareció el sistema de pedidos on-line?</span>
+                <br>
+                <label class="radio-inline"><input type="radio" name="pregunta5" value="5" 
+                [(ngModel)]="encuesta.pregunta5" required/>Excelente</label>
+                <label class="radio-inline"><input type="radio" name="pregunta5" value="4" 
+                [(ngModel)]="encuesta.pregunta5"/>Muy buena</label>
+                <label class="radio-inline"><input type="radio" name="pregunta5" value="3" 
+                [(ngModel)]="encuesta.pregunta5"/>Buena</label>
+                <label class="radio-inline"><input type="radio" name="pregunta5" value="2" 
+                [(ngModel)]="encuesta.pregunta5"/>Regular</label>
+                <label class="radio-inline"><input type="radio" name="pregunta5" value="1" 
+                [(ngModel)]="encuesta.pregunta5"/>Mala</label>
+            </div>
+            <hr style="margin: 5px;">
+            <!-- PREGUNTA #6 -->
+            <div class="form-group">
+                <label class="control-label">Pregunta #6:</label>
+                <span>¿Volvería a consumir nuestros productos?</span>
+                <br>
+                <label class="radio-inline"><input type="radio" name="pregunta6" value="1" 
+                [(ngModel)]="encuesta.pregunta6"/>Sí</label>
+                <label class="radio-inline"><input type="radio" name="pregunta6" value="0" 
+                [(ngModel)]="encuesta.pregunta6"/>No</label>
+            </div>
+            <hr style="margin: 5px;">
+            <!-- PREGUNTA #7 -->
+            <div class="form-group">
+                <label class="control-label">Pregunta #7:</label>
+                <span>¿Cuáles de estos sabores le gustaría que agreguemos? (Puede marcar más de una)</span>
+                <br>
+                <label class="radio-inline"><input type="checkbox" name="pregunta7-1" value="1" 
+                [(ngModel)]="encuesta.pregunta7.uno"/>Pizza caprese</label>
+                <label class="radio-inline"><input type="checkbox" name="pregunta7-2" value="2" 
+                [(ngModel)]="encuesta.pregunta7.dos"/>Pizza de zapallitos</label>
+                <label class="radio-inline"><input type="checkbox" name="pregunta7-3" value="3" 
+                [(ngModel)]="encuesta.pregunta7.tres"/>Pizza de milanesa</label>
+                <label class="radio-inline"><input type="checkbox" name="pregunta7-4" value="4" 
+                [(ngModel)]="encuesta.pregunta7.cuatro"/>Pizza de mariscos</label>
+                <label class="radio-inline"><input type="checkbox" name="pregunta7-5" value="5" 
+                [(ngModel)]="encuesta.pregunta7.cinco"/>Pizza de jamón y ananá</label>
+            </div>
+            <hr style="margin: 5px;">
+            <!-- COMENTARIOS -->
+            <div class="form-group">
+                <label for="comentario" class="control-label">Comentarios</label>
+                <!-- <input type="text" class="form-control" name="comentario" id="comentario" ng-model="encuesta.comentario" placeholder="Ingrese Comentarios" required maxlength=150/>        -->
+                <textarea class="form-control" [(ngModel)]="encuesta.comentario" name="comentario" id="comentario" cols="20" rows="5"placeholder="Ingrese Comentarios" maxlength=150></textarea>
+            </div>
+
+            <a class="btn btn-info " name="guardar" (click)="GuardarEncuesta()"><span class="glyphicon glyphicon-save">&nbsp;</span>ENVIAR</a>
+            <a class="btn btn-info " (click)="GuardarEncuesta()"><span class="glyphicon glyphicon-save">&nbsp;</span>Salir sin completar encuesta</a>
+        </form>
+    </div>
+</div>

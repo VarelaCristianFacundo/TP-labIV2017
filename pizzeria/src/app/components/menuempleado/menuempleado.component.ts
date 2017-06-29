@@ -2,21 +2,24 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-menu',
-  templateUrl: './menu.component.html',
-  styleUrls: ['./menu.component.css']
+  selector: 'app-menuempleado',
+  templateUrl: './menuempleado.component.html',
+  styleUrls: ['./menuempleado.component.css']
 })
-export class MenuComponent implements OnInit {
+export class MenuempleadoComponent implements OnInit {
 
   constructor(private router: Router) { }
 
   ngOnInit() {
   }
+
   salir()
   {
     //localStorage.setItem('token', null);
     localStorage.removeItem('token');
     window.alert('Hasta Luego!!!');
-    this.router.navigate(['/encuesta']);
+    this.router.navigate(['/login']);
   }
+
+
 }

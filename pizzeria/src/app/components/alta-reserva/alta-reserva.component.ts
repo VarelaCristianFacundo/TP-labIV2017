@@ -44,6 +44,12 @@ export class AltaReservaComponent implements OnInit {
     //var persona = {id: 4898, nombre:"Facundo", apellido:"Varela", dni:"32184", foto:"341654.jpg"};
     //var pers = this.xwwwfurlenc({nombre: "facu", apellido: "Varela", email: "a@a.a", sexo: "M",
     //perfil: "Administrador", password: "1234"});
+    if (this.reserva.local == "" || this.reserva.fecha == "" || this.reserva.hora == "" || this.reserva.cantidad == null)
+    {
+       alert ("Faltan datos");
+    }
+    else
+    {
     var pedido = this.xwwwfurlenc({id_usuario: this.auth.getToken().id, local: this.reserva.local,
     fecha: this.reserva.fecha + " " + this.reserva.hora, cantidad: this.reserva.cantidad});
     this.ws.crearReserva(pedido)
@@ -51,6 +57,10 @@ export class AltaReservaComponent implements OnInit {
       console.log("Alta: ", data);
  //     e.confirm.resolve();
     })
+      alert ("Gracias por su reserva.");
+      this.router.navigateByUrl("/cliente");
+    }
+        
   }
 
   volver()

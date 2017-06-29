@@ -19,14 +19,14 @@ export class EstadisticasComponent implements OnInit {
   public lineChartOptions: any = {
     title: {
         display: true,
-        text: 'Compras por Cliente expresado en $',
+        text: 'Compras por Usuario ID, expresado en $',
         fontSize: 16
     }
   };
   public pieChartOptions: any = {
     title: {
         display: true,
-        text: 'Ventas de Locales expresado en $',
+        text: 'Ventas por Locales, expresado en $',
         fontSize: 16
     }
   };

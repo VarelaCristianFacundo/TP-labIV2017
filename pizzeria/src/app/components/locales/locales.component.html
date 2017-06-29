@@ -47,8 +47,8 @@
         </div>
         <div class="container" style="width: 100%; margin: 0 auto;">
       <div class="form-group">
-        <input placeholder="Enter source location" autocorrect="off" autocapitalize="off" spellcheck="off" type="text" class="form-control" #pickupInput [formControl]="destinationInput">
-        <input placeholder="Enter destination" autocorrect="off" autocapitalize="off" spellcheck="off" type="text" [(ngModel)]="locacion" class="form-control" #pickupOutput [formControl]="destinationOutput" >
+        <input placeholder="Enter source location" autocorrect="on" autocapitalize="on" spellcheck="on" type="text" class="form-control" #pickupInput [formControl]="destinationInput">
+        <input placeholder="Enter destination" autocorrect="on" autocapitalize="on" spellcheck="on" type="text" [(ngModel)]="locacion" class="form-control" #pickupOutput [formControl]="destinationOutput" >
       </div>
        <sebm-google-map [latitude]="latitude" [longitude]="longitude" [scrollwheel]="false" [zoom]="zoom"  >
                 <!-- <sebm-google-map-marker [latitude]="latitude" [longitude]="longitude" [iconUrl]="iconurl">

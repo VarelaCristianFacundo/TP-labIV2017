@@ -1,0 +1,17 @@
+#fondoSmart {
+  background-repeat: no-repeat;
+  background-color: orange;
+  background-size: cover;
+}
+
+.contenedor{
+  background-color: #FFDEAD;
+  margin-top: 1cm;
+  padding: 30px;
+  border-radius: 10px;
+}
+
+.seleccion:hover{
+  background-color: #D2691E !important;
+
+}

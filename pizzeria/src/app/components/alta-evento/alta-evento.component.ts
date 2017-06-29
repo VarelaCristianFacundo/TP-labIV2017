@@ -43,16 +43,25 @@ export class AltaEventoComponent implements OnInit {
     }
 
  public Enviar(){  
-  for (var i = this.selectedEntities.length - 1; i >= 0; i--) {
-    var evento = this.xwwwfurlenc({id_usuario: this.auth.getToken().id, 
-    fecha: this.evento.fecha + " " + this.evento.hora, precio: this.selectedEntities[i].precio, 
-    cantidad: this.selectedEntities[i].cantidad, id_local: this.evento.id_local});
-    console.info(evento);
-    this.ws.crearEvento(evento)
-    .then(data => {
-      console.log("Alta: ", data);
-    })
 
+  if (this.evento.hora == "" || this.evento.fecha == "")
+  {
+    alert ("Faltan ingresar datos");
+  }
+  else
+  {
+    for (var i = this.selectedEntities.length - 1; i >= 0; i--) {
+      var evento = this.xwwwfurlenc({id_usuario: this.auth.getToken().id, 
+      fecha: this.evento.fecha + " " + this.evento.hora, precio: this.selectedEntities[i].precio, 
+      cantidad: this.selectedEntities[i].cantidad, id_local: this.evento.id_local});
+      console.info(evento);
+      this.ws.crearEvento(evento)
+      .then(data => {
+        console.log("Alta: ", data);
+      })
+     }
+     alert ("Gracias organizar un evento en nuestra Pizzería");
+    this.router.navigateByUrl("/cliente");
   }
 }
 

@@ -1,17 +1,4 @@
-<nav class="navbar navbar-inverse bg-inverse">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <a class="navbar-brand" href="/empleado">Inicio</a>
-    </div>
-    <ul class="nav navbar-nav">
-      <li><a routerLink="/altacliente" routerLinkActive="active">Alta de Clientes</a></li>
-      <li><a routerLink="/altapedidos" routerLinkActive="active">Alta de Pedidos</a></li>
-      <li><a routerLink="/altaproductos" routerLinkActive="active">Alta de Productos</a></li>
-      <li><a style="margin-left: 20cm;" [routerLink]="[]" (click)="salir()" routerLinkActive="active">Logout</a></li>
-    </ul>
-  </div>
-</nav>
-
+<app-menuempleado></app-menuempleado>
 <div class="container contenedor">
 <table class="row container" style="width: 100%; margin: 0 auto;" [mfData]="datos" #mf="mfDataTable" [mfRowsOnPage]="5" (mfSelectedEntities)="setSelectedEntities($event)">
     <thead class="panel panel-info">
@@ -26,7 +13,7 @@
                 <mfDefaultSorter by="precio">Precio</mfDefaultSorter>
             </th>
             <th style="width: 40%">
-                <mfDefaultSorter by="cantidad">City</mfDefaultSorter>
+                <mfDefaultSorter by="cantidad">Cantidad</mfDefaultSorter>
             </th>
         </tr>
     </thead>
@@ -91,10 +78,10 @@
             </div>
         </div>
     </div>
-    <a align="left" target="_blank" data-toggle="modal" data-target="#myModal" type="button" (click)="Enviar()" class="btn btn-info btn-lg btn-block login-button">Comprar</a>
+    <a align="left" target="_blank" data-target="#myModal" type="button" (click)="Enviar()" class="btn btn-info btn-lg btn-block login-button">Comprar</a>
 </div>
 
-  <!-- Modal -->
+  <!-- Modal data-toggle="modal"-->
   <div class="modal fade" id="myModal" role="dialog">
     <div class="modal-dialog">
     

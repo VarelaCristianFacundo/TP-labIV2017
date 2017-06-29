@@ -57,33 +57,15 @@
 						<label class="radio-inline"><input type="radio" (click)= "user.sexo='F'" name="optradio">Femenino</label>
 						</div>
 						</div>
-
+						</form>
 						<div class="form-group ">
-							<a align="left" target="_blank" type="button" data-toggle="modal" data-target="#myModal" (click)="agregar()" class="btn btn-primary btn-lg btn-block login-button">Registrar</a>
+							<a align="left" target="_blank" type="button" (click)="agregar()" class="btn btn-primary btn-lg btn-block login-button">Registrar</a>
 
 							<a target="_blank" type="button" id="volver" (click)="volver()" class="btn btn-info btn-lg btn-block">Volver</a>
 						</div>						
-					</form>
+	
 				</div>
 			</div>
 		</div>
 
 </html>
-
-<!-- Modal -->
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModalLabel">Muchas gracias por Registrarte</h4>
-      </div>
-      <div class="modal-body">
-        Ya puedes ingresar al sistema con tu e-mail y tu contraseña.
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-primary" (click)="volver()" data-dismiss="modal">Volver al inicio.</button>
-      </div>
-    </div>
-  </div>
-</div>

@@ -11,7 +11,7 @@ import { AuthHttp } from 'angular2-jwt';
 @Injectable()
 export class WsService {
 
-  url: string = 'http://localhost/TP-labIV2017/backend/index.php/';
+  url: string = 'Http://www.cristianvarela.esy.es/backend/index.php/';
 
 
   constructor(public http: Http, private authHttp: AuthHttp)
@@ -303,8 +303,6 @@ export class WsService {
     } else {
       errMsg = error.message ? error.message : error.toString();
     }
-    console.error( errMsg );
-    console.error( 'CATCH' );
     return Observable.throw(errMsg);
   }
 }
