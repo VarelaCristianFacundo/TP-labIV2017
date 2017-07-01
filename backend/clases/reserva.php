@@ -131,7 +131,7 @@
 			public static function CrearConexion(){
 				try
 				{
-					$conexion = new PDO("mysql:host=localhost;dbname=pizzeria;charset=utf8;",'root','');
+					$conexion = new PDO("mysql:host=mysql.hostinger.com.ar;dbname=u484790069_pizza;charset=utf8;",'u484790069_cvare','Neverwinter17593');
 					return $conexion;
 				}
 				catch (Exception $e) {
