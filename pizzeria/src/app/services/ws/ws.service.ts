@@ -6,226 +6,223 @@ import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/toPromise';
 import { AuthHttp } from 'angular2-jwt';
+import 'rxjs/add/observable/throw';
 // import { Http, Response, RequestOptions, Headers, RequestMethod } from '@angular/http';
 
 @Injectable()
 export class WsService {
 
-  url: string = 'Http://www.cristianvarela.esy.es/backend/index.php/';
+  url: string = 'http://localhost/TP-labIV2017/backend/apirestV6-JWT-MW-POO/index.php/';
 
+  constructor(public http: Http, private authHttp: AuthHttp) {  }  
 
-  constructor(public http: Http, private authHttp: AuthHttp)
-  {
-
-  }
-
-  crearReserva ( pedido )
-  {
-    let headers = new Headers({ 'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8' });
-    let options = new RequestOptions( {method: RequestMethod.Post, headers: headers });
-
-    return this.http
-      .post(this.url+"altaReserva", pedido, options)
-      .toPromise()
-      .then( this.extractData )
-      .catch( this.handleError );
-  }
-
+//----------------------------------------------------------------//
+// Alta de Evento y de Reserva
   crearEvento ( evento )
   {
     let headers = new Headers({ 'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8' });
     let options = new RequestOptions( {method: RequestMethod.Post, headers: headers });
 
     return this.http
-      .post(this.url+"altaEvento", evento, options)
+      .post(this.url+"evento/altaEvento", evento, options)
       .toPromise()
       .then( this.extractData )
       .catch( this.handleError );
-  }
-
- crearPedido ( pedidos )
+  }  
+  crearReserva ( pedido )
   {
     let headers = new Headers({ 'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8' });
     let options = new RequestOptions( {method: RequestMethod.Post, headers: headers });
 
     return this.http
-      .post(this.url+"altaPedido", pedidos, options)
+      .post(this.url+"reserva/altaReserva", pedido, options)
       .toPromise()
       .then( this.extractData )
       .catch( this.handleError );
   }
+//----------------------------------------------------------------//
 
-  editarPedido ( pedido )
+//----------------------------------------------------------------//
+  // Traer Datos y ABM de Locales
+  traerDatosLocales ()
   {
-    let headers = new Headers({ 'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8' });    
-    let options = new RequestOptions( {method: RequestMethod.Post, headers: headers });
-
     return this.http
-      .post(this.url + "editarPedido", pedido, options)
+      .get( this.url + "local/traerDatosLocales")
       .toPromise()
       .then( this.extractData )
       .catch( this.handleError );
   }
-
-  borrarPedido ( pedido )
-  {
-    let headers = new Headers({ 'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8' });    
-    let options = new RequestOptions( {method: RequestMethod.Post, headers: headers });
-
-    return this.http
-      .post(this.url+ "borrarPedido", pedido, options)
-      .toPromise()
-      .then( this.extractData )
-      .catch( this.handleError );
-  }
-
-  crearProducto ( producto )
-  {
-    let headers = new Headers({ 'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8' });
-    let options = new RequestOptions( {method: RequestMethod.Post, headers: headers });
-
-    return this.http
-      .post(this.url+"altaProducto", producto, options)
-      .toPromise()
-      .then( this.extractData )
-      .catch( this.handleError );
-  }
-
-  editarProducto ( producto )
-  {
-    let headers = new Headers({ 'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8' });    
-    let options = new RequestOptions( {method: RequestMethod.Post, headers: headers });
-
-    return this.http
-      .post(this.url + "editarProducto", producto, options)
-      .toPromise()
-      .then( this.extractData )
-      .catch( this.handleError );
-  }
-
-  borrarProducto ( producto )
-  {
-    let headers = new Headers({ 'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8' });    
-    let options = new RequestOptions( {method: RequestMethod.Post, headers: headers });
-
-    return this.http
-      .post(this.url+ "borrarProducto", producto, options)
-      .toPromise()
-      .then( this.extractData )
-      .catch( this.handleError );
-  }
-
   crearLocal ( local )
   {
     let headers = new Headers({ 'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8' });
     let options = new RequestOptions( {method: RequestMethod.Post, headers: headers });
 
     return this.http
-      .post(this.url+"altaLocal", local, options)
+      .post(this.url+"local/altaLocal", local, options)
       .toPromise()
       .then( this.extractData )
       .catch( this.handleError );
   }
-
-
   editarLocal ( local )
   {
     let headers = new Headers({ 'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8' });    
     let options = new RequestOptions( {method: RequestMethod.Post, headers: headers });
 
     return this.http
-      .post(this.url + "editarLocal", local, options)
+      .post(this.url + "local/editarLocal", local, options)
       .toPromise()
       .then( this.extractData )
       .catch( this.handleError );
   }
-
   borrarLocal ( local )
   {
     let headers = new Headers({ 'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8' });    
     let options = new RequestOptions( {method: RequestMethod.Post, headers: headers });
 
     return this.http
-      .post(this.url+ "borrarLocal", local, options)
+      .post(this.url+ "local/borrarLocal", local, options)
       .toPromise()
       .then( this.extractData )
       .catch( this.handleError );
   }
+//----------------------------------------------------------------//
 
-
+//----------------------------------------------------------------//
+  // Traer Datos y ABM de Usuarios
+  traerDatosUsuarios ()
+  {
+    return this.http
+      .get( this.url + "usuario/traerDatosUsuarios")
+      .toPromise()
+      .then( this.extractData )
+      .catch( this.handleError );
+  }
   crearUsuario ( usuario )
   {
     let headers = new Headers({ 'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8' });
     let options = new RequestOptions( {method: RequestMethod.Post, headers: headers });
 
     return this.http
-      .post(this.url+"registro", usuario, options)
+      .post(this.url+"usuario/registro", usuario, options)
       .toPromise()
       .then( this.extractData )
       .catch( this.handleError );
   }
-
   editarUsuario ( persona )
   {
     let headers = new Headers({ 'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8' });    
     let options = new RequestOptions( {method: RequestMethod.Post, headers: headers });
 
     return this.http
-      .post(this.url + "editarUser", persona, options)
+      .post(this.url + "usuario/editarUser", persona, options)
       .toPromise()
       .then( this.extractData )
       .catch( this.handleError );
   }
-
   borrarUsuario ( persona )
   {
     let headers = new Headers({ 'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8' });    
     let options = new RequestOptions( {method: RequestMethod.Post, headers: headers });
 
     return this.http
-      .post(this.url+ "borrarUser", persona, options)
+      .post(this.url+ "usuario/borrarUser", persona, options)
       .toPromise()
       .then( this.extractData )
       .catch( this.handleError );
   }
+//----------------------------------------------------------------//
 
+//----------------------------------------------------------------//
+  // Traer Datos y ABM de Pedidos
   traerDatosPedidos ()
   {
     return this.http
-      .get( this.url + "traerDatosPedidos")
+      .get( this.url + "pedido/traerDatosPedidos")
       .toPromise()
       .then( this.extractData )
       .catch( this.handleError );
   }
-
-  traerDatosUsuarios ()
+   crearPedido ( pedidos )
   {
+    let headers = new Headers({ 'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8' });
+    let options = new RequestOptions( {method: RequestMethod.Post, headers: headers });
+
     return this.http
-      .get( this.url + "traerDatosUsuarios")
+      .post(this.url+"pedido/altaPedido", pedidos, options)
       .toPromise()
       .then( this.extractData )
       .catch( this.handleError );
   }
-
-  traerDatosLocales ()
+  editarPedido ( pedido )
   {
+    let headers = new Headers({ 'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8' });    
+    let options = new RequestOptions( {method: RequestMethod.Post, headers: headers });
+
     return this.http
-      .get( this.url + "traerDatosLocales")
+      .post(this.url + "pedido/editarPedido", pedido, options)
       .toPromise()
       .then( this.extractData )
       .catch( this.handleError );
   }
+  borrarPedido ( pedido )
+  {
+    let headers = new Headers({ 'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8' });    
+    let options = new RequestOptions( {method: RequestMethod.Post, headers: headers });
 
+    return this.http
+      .post(this.url+ "pedido/borrarPedido", pedido, options)
+      .toPromise()
+      .then( this.extractData )
+      .catch( this.handleError );
+  }  
+//----------------------------------------------------------------//
+  
+//----------------------------------------------------------------//
+  // Traer Datos y ABM de Productos
   traerDatosProductos ()
   {
     return this.http
-      .get( this.url + "traerDatosProductos")
+      .get( this.url + "producto/traerDatosProductos")
       .toPromise()
       .then( this.extractData )
       .catch( this.handleError );
   }
+  crearProducto ( producto )
+  {
+    let headers = new Headers({ 'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8' });
+    let options = new RequestOptions( {method: RequestMethod.Post, headers: headers });
 
+    return this.http
+      .post(this.url+"producto/altaProducto", producto, options)
+      .toPromise()
+      .then( this.extractData )
+      .catch( this.handleError );
+  }
+  editarProducto ( producto )
+  {
+    let headers = new Headers({ 'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8' });    
+    let options = new RequestOptions( {method: RequestMethod.Post, headers: headers });
 
+    return this.http
+      .post(this.url + "producto/editarProducto", producto, options)
+      .toPromise()
+      .then( this.extractData )
+      .catch( this.handleError );
+  }
+  borrarProducto ( producto )
+  {
+    let headers = new Headers({ 'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8' });    
+    let options = new RequestOptions( {method: RequestMethod.Post, headers: headers });
+
+    return this.http
+      .post(this.url+ "producto/borrarProducto", producto, options)
+      .toPromise()
+      .then( this.extractData )
+      .catch( this.handleError );
+  }
+//----------------------------------------------------------------//
+
+//----------------------------------------------------------------//
 //Función para pasar de formato JSON a formato x-www-form-urlencoded
   xwwwfurlenc(srcjson){
     if(typeof srcjson !== "object")
@@ -242,7 +239,7 @@ export class WsService {
     }
     return urljson;
   }
-
+//----------------------------------------------------------------//
 
 
   /**

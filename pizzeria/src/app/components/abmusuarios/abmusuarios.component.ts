@@ -129,10 +129,10 @@ export class AbmusuariosComponent implements OnInit {
 	var pers = this.xwwwfurlenc({nombre: e.newData.nombre, apellido: e.newData.apellido,
     email: e.newData.email, sexo: e.newData.sexo, perfil: e.newData.perfil, password: e.newData.password });
 
-
+console.log ("Persona", pers);
     this.ws.crearUsuario(pers)
     .then(data => {
-      console.log("Alta: ", data);
+      //console.log("Alta: ", data);
       e.confirm.resolve();
     })
   }

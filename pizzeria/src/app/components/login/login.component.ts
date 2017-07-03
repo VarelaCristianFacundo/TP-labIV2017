@@ -51,8 +51,10 @@ export class LoginComponent implements OnInit {
     this.ws.post( {email: this.user.email, clave: this.user.clave} )
     .then( data => {
       console.log(data);
-      if ( data.token )
-      {
+      console.log(data.token);
+      
+      //if ( data.token )
+      //{
         localStorage.setItem('token', data.token);
         console.log (localStorage.getItem('token'));
         this.auth = new AutService(this.router);
@@ -61,26 +63,26 @@ export class LoginComponent implements OnInit {
        // console.info ("AVER", data);
       
       //Recupero el perfil del token
-      if(this.auth.getToken().perfil == "Cliente")
+      if(this.auth.getToken().data.perfil == "Cliente")
       {
         this.router.navigateByUrl("/cliente");
       }
-      if(this.auth.getToken().perfil == "Administrador")
+      if(this.auth.getToken().data.perfil == "Administrador")
       {
         this.router.navigateByUrl("/administrador");  
       }
 
-      if(this.auth.getToken().perfil == "Encargado")
+      if(this.auth.getToken().data.perfil == "Encargado")
       {
         this.router.navigateByUrl("/encargado");  
       }
        
-      if(this.auth.getToken().perfil == "Empleado")
+      if(this.auth.getToken().data.perfil == "Empleado")
       {
         this.router.navigateByUrl("/empleado");  
       }
 
-      }
+      //}
     })
     .catch( e => {
       console.log(e);

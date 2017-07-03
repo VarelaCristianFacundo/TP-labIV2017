@@ -50,7 +50,7 @@ export class AltaReservaComponent implements OnInit {
     }
     else
     {
-    var pedido = this.xwwwfurlenc({id_usuario: this.auth.getToken().id, local: this.reserva.local,
+    var pedido = this.xwwwfurlenc({id_usuario: this.auth.getToken().data.id, local: this.reserva.local,
     fecha: this.reserva.fecha + " " + this.reserva.hora, cantidad: this.reserva.cantidad});
     this.ws.crearReserva(pedido)
     .then(data => {
