@@ -61,11 +61,11 @@ Content from cell 1 | Content from cell 2
 Content in the first column | Content in the second column
 
 **Pedidos** 
-id | id_usuario | id_local | precio | cantidad |   estado  |    descripcion    |
--- | ---------- | -------- | ------ | -------- | --------- | ----------------  |
-35 |     23     |     2    |   80   |     2    | Pedido    | Pizza Muzzarella  |
-37 | 4  		| 	  1    |   90   |     3    | Pedido    | Pizza Napolitana  |
-39 | 4          | 	  1	   |   20   |     1    | Entregado | Empanada de Carne |
+id | id_usuario | id_local | precio | cantidad |   estado  |    descripcion  
+-- | ---------- | -------- | ------ | -------- | --------- | ----------------
+35 |     23     |     2    |   80   |     2    | Pedido    | Pizza Muzzarella
+37 | 4  		| 	  1    |   90   |     3    | Pedido    | Pizza Napolitana
+39 | 4          | 	  1	   |   20   |     1    | Entregado | Empanada de Carne
 
 **Usuarios** 
 | id       | nombre | apelllido   |  email |  sexo  | perfil | password |      
