@@ -49,7 +49,7 @@
 
 ----------
 
-###Base de Datos
+### Base de Datos
 
 ----------
 
@@ -61,6 +61,7 @@ Content from cell 1 | Content from cell 2
 Content in the first column | Content in the second column
 
 **Pedidos** 
+
 id | id_usuario | id_local | precio | cantidad |   estado  |    descripcion  
 -- | ---------- | -------- | ------ | -------- | --------- | ----------------
 35 |     23     |     2    |   80   |     2    | Pedido    | Pizza Muzzarella
