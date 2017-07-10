@@ -23,6 +23,8 @@ Funcionales del sistema:
  - [X] POO en TS para todas las entidades(usar herencia)
  - [X] Servicios
 
+![picture alt](TP-labIV2017/pizzeria/src/assets/img/GithubAdmin.png "Pantalla Admin")
+
 Usuarios:
 
 Administrador: Puede crear nuevos usuarios (encargado, empleado, cliente) y locales.
