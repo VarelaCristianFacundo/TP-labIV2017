@@ -68,34 +68,38 @@ id | id_usuario | id_local | precio | cantidad |   estado  |    descripcion
 37 | 4  		| 	  1    |   90   |     3    | Pedido    | Pizza Napolitana
 39 | 4          | 	  1	   |   20   |     1    | Entregado | Empanada de Carne
 
-**Usuarios** 
-| id       | nombre | apelllido   |  email |  sexo  | perfil | password |      
-| :------- | :----- | :---        | :----- | :----- | :-----      | :-----   |           
+**Usuarios**
+
+| id       | nombre | apelllido   |  email |  sexo  | perfil | password  
+| :------- | :----- | :---        | :----- | :----- | :-----      | :-----   
 | 1        | Administrador  |  Administrador | admin@admin.com | M | Administrador | 1234
 | 2    | Cristian    |  Varela | encargado@encargado.com | M | Encargado | 1234
 | 4     | Octavio | Villegas | octaviovillegas@gmail.com | M | Empleado | 1234
 | 18 | Row | Wily | rwilliam@yahoo.com.ar | M | Cliente | 1234
 
 **Reservas** 
-id | id_usuario | local |       fecha      | cantidad | 
--- | ---------- | ----- | ---------------- | -------- |
-10 |     16     |   3   | 0022-02-22 14:22 |    10    |
-11 |     1      |   3   | 0022-02-22 14:22 |    4     |
-12 |     18     |   3   | 0022-02-22 14:22 |    6     |
+
+id | id_usuario | local |       fecha      | cantidad  
+-- | ---------- | ----- | ---------------- | -------- 
+10 |     16     |   3   | 0022-02-22 14:22 |    10    
+11 |     1      |   3   | 0022-02-22 14:22 |    4     
+12 |     18     |   3   | 0022-02-22 14:22 |    6     
 
 **Productos** 
-id |    descripcion   | categoria | precio |
--- | ---------------- | --------- | ------ |
-1  | Pizza muzzarella |   Comida  |   80   |
-2  |   Agua mineral   |   Bebida  |   20   |
-3  | Pizza napolitana |   Comida  |   90   |
+
+id |    descripcion   | categoria | precio 
+-- | ---------------- | --------- | ------ 
+1  | Pizza muzzarella |   Comida  |   80   
+2  |   Agua mineral   |   Bebida  |   20   
+3  | Pizza napolitana |   Comida  |   90   
 
 **Locales** 
-id |    direccion    |     cp     |    foto1     |    foto2     |    foto3     |
--- | --------------- | ---------- | ------------ | ------------ | ------------ |
-1  | Centenario 512  | San Isidro | local1f1.jpg | local1f2.jpg | local1f3.jpg |
-2  | Alvear 2894     | San Martin | local2f1.jpg | local2f2.jpg | local2f3.jpg |
-3  | Rivadavia 11704 |    CABA    | local3f1.jpg | local3f2.jpg | local3f3.jpg |
+
+id |    direccion    |     cp     |    foto1     |    foto2     |    foto3     
+-- | --------------- | ---------- | ------------ | ------------ | ------------ 
+1  | Centenario 512  | San Isidro | local1f1.jpg | local1f2.jpg | local1f3.jpg 
+2  | Alvear 2894     | San Martin | local2f1.jpg | local2f2.jpg | local2f3.jpg 
+3  | Rivadavia 11704 |    CABA    | local3f1.jpg | local3f2.jpg | local3f3.jpg 
 
 
 
