@@ -1,45 +1,50 @@
-# TP-labIV2017
+Pizzería Argenta SRL
+===================
+----------
 
-Web: http://cristianvarela.esy.es (Hostinger)
-BD: u484790069_pizza (Hostinger)
-User MySql: u484790069_cvare
-Host: mysql.hostinger.com.ar
+<i class="icon-cog"></i>**Datos de la web**
+>  
+> - **Host:** mysql.hostinger.com.ar
+> - **Web:** http://cristianvarela.esy.es  <i class="icon-upload"></i>
+> - **BD:** u484790069_pizza
+> - **User:** MySql: u484790069_cvare
+> - **API key:** AIzaSyCBIeNMEOoYQEDL4S5GlKKP9EcUiOCNr3A
 
-API key:
-AIzaSyCBIeNMEOoYQEDL4S5GlKKP9EcUiOCNr3A
+----------
+**Pantallas de la web**
+*Admin*
+>![picture alt](pizzeria/src/assets/img/GithubAdmin.png "Pantalla Admin")
 
-Funcionales del sistema:
- - [X] ABM.
- - [X] login (JWT).
- - [X] Botones de test ( Administrador, encargado,empleado y cliente).
- - [X] WEbServer(API rest).
- - [X] Geo localización.
- - [X] Generar documentos Excel.
- - [X] Generar Documentos pdf .
- - [X] Generar graficos estadísticos.
- - [X] Responsive / estilos aplicados de forma estética.
- - [X] Manejo de imágenes.
- - [X] Creación de al menos 5 componentes.
- - [X] POO en TS para todas las entidades(usar herencia)
- - [X] Servicios
+**<i class="icon-cog"> Funcionales del sistema**
+> - [X] ABM.
+> - [X] login (JWT).
+> - [X] Botones de test ( Administrador, encargado,empleado y cliente).
+> - [X] WEbServer(API rest).
+> - [X] Geo localización.
+> - [X] Generar documentos Excel.
+> - [X] Generar Documentos pdf .
+> - [X] Generar graficos estadísticos.
+> - [X] Responsive / estilos aplicados de forma estética.
+> - [X] Manejo de imágenes.
+> - [X] Creación de al menos 5 componentes.
+> - [X] POO en TS para todas las entidades(usar herencia)
+> - [X] Servicios
 
-![picture alt](pizzeria/src/assets/img/GithubAdmin.png "Pantalla Admin")
+----------
 
-Usuarios:
-
-Administrador: Puede crear nuevos usuarios (encargado, empleado, cliente) y locales.
-
-Encargado: Puede modificar los estados de los empleados , los pedidos y los productos u
+**<i class="icon-cog"> Perfiles**
+>- Administrador: Puede crear nuevos usuarios (encargado, empleado, cliente) y locales.
+>- Encargado: Puede modificar los estados de los empleados , los pedidos y los productos u
 ofertas.
-
-Empleado: Puede cargar pedidos, dar de alta clientes, dar de alta ofertas o productos.
-
-Cliente: los clientes son los únicos usuarios que se pueden dar de alta por sí solos
+>- Empleado: Puede cargar pedidos, dar de alta clientes, dar de alta ofertas o productos.
+>- Cliente: los clientes son los únicos usuarios que se pueden dar de alta por sí solos.
 Sucursales o puntos de venta (tres locales mínimo):
 cada local debe tener una dirección real y 3 fotos del frente
 cada local tiene asignado un encargado y como mínimo dos empleados
 cada local tiene un listado de sus ofertas de producto y/o pedidos
 Los empleados y encargados pueden pertenecer a un solo local
+
+----------
 
 Operatoria cliente:
 1- El cliente ingresa a nuestra aplicación y si no está registrado se registra.
