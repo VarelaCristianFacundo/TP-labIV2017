@@ -1,5 +1,5 @@
 Pizzería Argenta SRL
-===================
+
 ----------
 
 <i class="icon-cog"></i>**Datos de la web**
@@ -12,8 +12,25 @@ Pizzería Argenta SRL
 
 ----------
 **Pantallas de la web**
-*Admin*
->![picture alt](pizzeria/src/assets/img/GithubAdmin.png "Pantalla Admin")
+----------
+*Login*
+>![picture alt](pizzeria/src/assets/img/GithubLogin.png "Login")
+----------
+*Administrador*
+>![picture alt](pizzeria/src/assets/img/GithubAdmin.png "Pantalla Administrador")
+>![picture alt](pizzeria/src/assets/img/GithubAdminABMLocales.png "Pantalla Admin Locales")
+----------
+*Encargado*
+>![picture alt](pizzeria/src/assets/img/GithubEncargado.png "Pantalla Encargado")
+>![picture alt](pizzeria/src/assets/img/GithubEncargadoABMProductos.png "Pantalla Encargado Productos")
+----------
+*Empleado*
+>![picture alt](pizzeria/src/assets/img/GithubEmpleado.png "Pantalla Empleado")
+>![picture alt](pizzeria/src/assets/img/GithubEmpleadoAltaPedido.png "Pantalla Empleado Pedidos")
+----------
+*Cliente*
+>![picture alt](pizzeria/src/assets/img/GithubCliente.png "Pantalla Cliente")
+>![picture alt](pizzeria/src/assets/img/GithubClienteLocales.png "Pantalla Locales")
 
 **<i class="icon-cog"> Funcionales del sistema**
 > - [X] ABM.
