@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 use \Psr\Http\Message\ServerRequestInterface as Request;
 use \Psr\Http\Message\ResponseInterface as Response;
 
@@ -6,17 +6,17 @@ require 'jwt/vendor/autoload.php';
 use Firebase\JWT\JWT;
 
 require '../composer/vendor/autoload.php';
-require_once '/clases/AccesoDatos.php';
-require_once '/clases/cdApi.php';
-require_once '/clases/usuarioApi.php';
-require_once '/clases/eventoApi.php';
-require_once '/clases/localApi.php';
-require_once '/clases/pedidoApi.php';
-require_once '/clases/productoApi.php';
-require_once '/clases/reservaApi.php';
-require_once '/clases/AutentificadorJWT.php';
-require_once '/clases/MWparaCORS.php';
-require_once '/clases/MWparaAutentificar.php';
+require_once 'clases/AccesoDatos.php';
+require_once 'clases/cdApi.php';
+require_once 'clases/usuarioApi.php';
+require_once 'clases/eventoApi.php';
+require_once 'clases/localApi.php';
+require_once 'clases/pedidoApi.php';
+require_once 'clases/productoApi.php';
+require_once 'clases/reservaApi.php';
+require_once 'clases/AutentificadorJWT.php';
+require_once 'clases/MWparaCORS.php';
+require_once 'clases/MWparaAutentificar.php';
 
 $config['displayErrorDetails'] = true;
 $config['addContentLengthHeader'] = false;
@@ -51,6 +51,7 @@ $app->post("/auth", function($request, $response, $args) use($app)
   //$res = array("resultado" => $app->request->post()); //Devuelvo todo lo que le pasé por post
   //$p = $app->request->post();
   $db = new PDO("mysql:host=localhost;dbname=pizzeria;charset=utf8;",'root','');
+  //$db = new PDO("mysql:host=mysql.hostinger.com.ar;dbname=u484790069_pizza;charset=utf8;",'u484790069_cvare','Neverwinter17593');
 
   $consulta = $db->prepare("SELECT U.id, U.nombre, U.apellido, U.email, U.perfil, U.sexo, U.password
             FROM usuarios U
@@ -156,6 +157,42 @@ $app->group('/reserva', function () {
   // $this->delete('/', \reservaApi::class . ':BorrarUno');
   // $this->put('/', \reservaApi::class . ':ModificarUno');
 })->add(\MWparaCORS::class . ':HabilitarCORSTodos');//->add(\MWparaAutentificar::class . ':VerificarUsuario')->add(\MWparaCORS::class . ':HabilitarCORS8080');
+
+$app->post("/subirFoto[/]", function($request, $response, $args) use ($app)
+{
+       $foto = $_FILES[ 'file' ][ 'tmp_name' ];
+       $ruta = "../../pizzeria/src/assets/img/Pizzerias" . DIRECTORY_SEPARATOR . $_FILES[ 'file' ][ 'name' ];
+       //$ruta = "./../assets". DIRECTORY_SEPARATOR ."img". DIRECTORY_SEPARATOR ."Pizzerias" . DIRECTORY_SEPARATOR . $_FILES[ 'file' ][ 'name' ];
+
+//	$ruta = "/home/u484790069/public_html/assets/img/Pizzerias". DIRECTORY_SEPARATOR . $_FILES[ 'file' ][ 'name' ];
+       if(!file_exists($ruta)) {
+           if ( !empty( $_FILES ) ) 
+           {
+               move_uploaded_file( $foto, $ruta );
+               $response->write("OK");
+           } 
+           else
+           {
+               $response->write("No hay archivos");
+           }   
+       }
+       else {
+           $nombre = $_FILES[ 'file' ][ 'name' ];
+           $long = strlen($nombre);
+           $ext = pathinfo($ruta, PATHINFO_EXTENSION);
+           $nombreSinExt = substr($nombre, $long * -1, $long -4 );
+           $hoy = date('Y-m-d-H-i-s');
+           $rutaNueva = "/home/u484790069/public_html/assets/img/Pizzerias" . DIRECTORY_SEPARATOR . "Reemplazadas" . DIRECTORY_SEPARATOR . $nombreSinExt . '_' . $hoy . '.' . $ext;
+           rename($ruta, $rutaNueva);
+           move_uploaded_file( $foto, $ruta );
+           $response->write("Foto guardada con éxito!");
+       }
+
+	  $response->withHeader('Content-type', 'application/json');
+ 	  return $response->withJson($objDelaRespuesta, 200);
+
+})->add(\MWparaCORS::class . ':HabilitarCORSTodos');
+
 
 $app->run();
 

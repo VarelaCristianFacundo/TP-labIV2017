@@ -11,7 +11,7 @@ import { AutService } from '../../services/auth/aut.service';
 export class ClienteComponent implements OnInit {
 
   constructor(private router: Router, private ws: WsService, private auth: AutService) { 
-    this.ws.getJwt('http://localhost/servidor/jwt/pagina1.php', {})
+    this.ws.getJwt('http://www.cristianvarela.esy.es/backend/apirestV6-JWT-MW-POO/jwt/pagina1.php', {})
     .then(data => {
       console.log(data);
     })

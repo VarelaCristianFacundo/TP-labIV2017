@@ -8,6 +8,7 @@ import { Ng2SmartTableModule } from 'ng2-smart-table';
 import { NguiMapModule} from '@ngui/map';
 import { DataTableModule } from "ng2-data-table";
 import { ChartsModule } from 'ng2-charts';
+import { FileUploadModule } from 'ng2-file-upload';
 
 import { AppComponent } from './app.component';
 import { MenuComponent } from './components/menu/menu.component';
@@ -42,11 +43,13 @@ import { EncuestaComponent } from './components/encuesta/encuesta.component';
 import { MenuadminComponent } from './components/menuadmin/menuadmin.component';
 import { MenuencargadoComponent } from './components/menuencargado/menuencargado.component';
 import { MenuempleadoComponent } from './components/menuempleado/menuempleado.component';
+import { AgregarLocalComponent } from './components/agregar-local/agregar-local.component';
 
 
 const appRoutes: Routes = [
   { path: 'registro', component: RegistroComponent },
   { path: 'encuesta', component: EncuestaComponent },
+  { path: 'agregar-local', component: AgregarLocalComponent },
   { path: 'cliente',
     canActivate: [VerificarJWTService],
     component: ClienteComponent },
@@ -54,7 +57,7 @@ const appRoutes: Routes = [
     canActivate: [VerificarJWTService],
     component: AltaReservaComponent },
   { path: 'alta-evento', 
-    //canActivate: [VerificarJWTService],
+    canActivate: [VerificarJWTService],
     component: AltaEventoComponent },
   { path: 'alta-pedido', 
     canActivate: [VerificarJWTService],
@@ -63,7 +66,7 @@ const appRoutes: Routes = [
     canActivate: [VerificarJWTService],
     component: AdministradorComponent },
   { path: 'abmusuarios', 
-    //canActivate: [VerificarJWTService],
+    canActivate: [VerificarJWTService],
     component: AbmusuariosComponent },
   { path: 'abmlocales', 
     canActivate: [VerificarJWTService],
@@ -132,7 +135,8 @@ const appRoutes: Routes = [
     EncuestaComponent,
     MenuadminComponent,
     MenuencargadoComponent,
-    MenuempleadoComponent
+    MenuempleadoComponent,
+    AgregarLocalComponent
   ],
   imports: [
     BrowserModule,
@@ -140,6 +144,7 @@ const appRoutes: Routes = [
     ChartsModule,
     CommonModule,
     FormsModule,
+    FileUploadModule,
     DataTableModule,
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyCBIeNMEOoYQEDL4S5GlKKP9EcUiOCNr3A',

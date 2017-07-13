@@ -30,14 +30,14 @@ class localApi extends Local implements IApiUsable
         $ArrayDeParametros = $request->getParsedBody();
         //var_dump($ArrayDeParametros);
         $direccion= $ArrayDeParametros['direccion'];
-        $cp= $ArrayDeParametros['cp'];
+        $localidad= $ArrayDeParametros['localidad'];
         $foto1= $ArrayDeParametros['foto1'];
         $foto2= $ArrayDeParametros['foto2'];
         $foto3= $ArrayDeParametros['foto3'];
         
         $miLocal = new Local();
         $miLocal->direccion=$direccion;
-        $miLocal->cp=$cp;
+        $miLocal->cp=$localidad;
         $miLocal->foto1=$foto1;
         $miLocal->foto2=$foto2;
         $miLocal->foto3=$foto3;

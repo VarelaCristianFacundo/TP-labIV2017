@@ -21,7 +21,6 @@ export class AbmlocalesComponent implements OnInit {
       addButtonContent: 'Agregar', //how to call some function to this one
       createButtonContent: 'Guardar',
       cancelButtonContent: 'Cancelar',
-      confirmCreate: true
     },
     delete: {
       deleteButtonContent: 'Borrar',
@@ -38,7 +37,7 @@ export class AbmlocalesComponent implements OnInit {
 
     actions: {
       columnTitle: 'Acciones',
-      add: true,
+      add: false,
       edit: true,
       delete: true
     },
@@ -103,8 +102,10 @@ export class AbmlocalesComponent implements OnInit {
 
   }
 
-  agregar ( e )
+  nuevoLocal ()
   {
+    this.router.navigateByUrl("/agregar-local");
+/*
     console.log("Evento crear: ",e);
     //this.datos.crearPersona(pers)
 	var pers = this.xwwwfurlenc({direccion: e.newData.direccion, cp: e.newData.cp,
@@ -115,7 +116,7 @@ export class AbmlocalesComponent implements OnInit {
     .then(data => {
       console.log("Alta: ", data);
       e.confirm.resolve();
-    })
+    })*/
   }
 
   borrar ( e )

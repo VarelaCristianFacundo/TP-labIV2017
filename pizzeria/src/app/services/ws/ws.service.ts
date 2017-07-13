@@ -13,6 +13,7 @@ import 'rxjs/add/observable/throw';
 export class WsService {
 
   url: string = 'http://localhost/TP-labIV2017/backend/apirestV6-JWT-MW-POO/index.php/';
+  //url: string = 'http://www.cristianvarela.esy.es/backend/apirestV6-JWT-MW-POO/index.php/';
 
   constructor(public http: Http, private authHttp: AuthHttp) {  }  
 

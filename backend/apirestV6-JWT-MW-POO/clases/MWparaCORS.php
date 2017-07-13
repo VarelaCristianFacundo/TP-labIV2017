@@ -52,10 +52,25 @@ class MWparaCORS
 		 $response = $next($request, $response);
 		// $response->getBody()->write('<p>habilitado HabilitarCORS8080</p>');
    		 return $response
-            ->withHeader('Access-Control-Allow-Origin', 'http://localhost:8080')
+            ->withHeader('Access-Control-Allow-Origin', 'http://cristianvarela.esy.es')
             ->withHeader('Access-Control-Allow-Headers', 'X-Requested-With, Content-Type, Accept, Origin, Authorization')
             ->withHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
 	}
+
+	public function HabilitarCORSFILE($request, $response, $next) {
+
+		/*
+		al ingresar no hago nada
+		*/
+		 $response = $next($request, $response);
+		// $response->getBody()->write('<p>habilitado HabilitarCORS8080</p>');
+   		 return $response
+            ->withHeader('Access-Control-Allow-Origin', 'http://localhost:4200')
+            ->withHeader('Access-Control-Allow-Headers', '*')
+            ->withHeader('Access-Control-Allow-Methods', '*');
+	}
+
+
 
 		/**
    * @api {any} /HabilitarCORS4200/  HabilitarCORS4200
