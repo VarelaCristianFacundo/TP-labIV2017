@@ -5,7 +5,7 @@
 <i class="icon-cog"></i>**Datos de la web**
 >  
 > - **Host:** mysql.hostinger.com.ar
-> - **Web:** http://cristianvarela.esy.es  <i class="icon-upload"></i>
+> - **Web:** Actualmente en mantenimiento http://cristianvarela.esy.es  <i class="icon-upload"></i>
 > - **BD:** u484790069_pizza
 > - **User:** MySql: u484790069_cvare
 > - **API key:** AIzaSyCBIeNMEOoYQEDL4S5GlKKP9EcUiOCNr3A
